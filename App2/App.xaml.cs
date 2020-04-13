@@ -11,6 +11,10 @@ namespace App2
             InitializeComponent();
 
             MainPage = new AppShell();
+            //test  vlad123
+            //dasdasd
+            //test
+
         }
 
         protected override void OnStart()
