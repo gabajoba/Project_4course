@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:views="clr-namespace:App2.Views"
+             mc:Ignorable="d"
+             x:Class="App2.AppShell">
+    <FlyoutItem>
+        <Tab Title="Menu" Icon="https://img.icons8.com/carbon-copy/2x/menu.png">
+            <ShellContent ContentTemplate="{DataTemplate views:MenuPage}"/>
+        </Tab>
+        <Tab Title="Profile" Icon="https://cdn2.iconfinder.com/data/icons/facebook-51/32/FACEBOOK_LINE-01-512.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}"/>
+        </Tab>
+        <Tab Title="Contacts" Icon="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/phone-512.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ContactsPage}"/>
+        </Tab>
+        <Tab Title="Cart" Icon="https://image.flaticon.com/icons/png/512/263/263142.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CartPage}"/>
+
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem
+
+</Shell>
