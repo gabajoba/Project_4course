@@ -11,7 +11,7 @@
             <Image x:Name="Image1" 
                    VerticalOptions="FillAndExpand" 
                    HorizontalOptions="FillAndExpand"
-                   Source="https://sun9-25.userapi.com/c855232/v855232047/214824/ECi8gVQHty0.jpg"
+                   Source="test.jpg"
                    Aspect="AspectFit">
                 
                 
