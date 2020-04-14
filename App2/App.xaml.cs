@@ -9,14 +9,17 @@ namespace App2
         public App()
         {
             InitializeComponent();
-
-            MainPage = new AppShell();
-            //test  vlad123
-            //dasdasd
-            //test
-
+            
+            var page = new NavigationPage(new App2.StartPageFiles.StartPage());
+            page.BackgroundColor = Color.FromHex("#FCB259");
+            page.BarBackgroundColor = Color.FromHex("#ff8256");
+            
+            page.BarTextColor = Color.Black;
+           
+            MainPage = page;
+            
         }
-
+       
         protected override void OnStart()
         {
         }

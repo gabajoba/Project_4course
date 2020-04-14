@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App2.StartPageFiles.RegPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0" Padding="0" BackgroundColor="#FCB259">
+                <Button BorderRadius="30" HeightRequest="60" WidthRequest="60"
+          BackgroundColor="Red" HorizontalOptions="Center" VerticalOptions="Start" />
+                <StackLayout HeightRequest="100" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" BackgroundColor="#FCB259">
+                    <Label Text="User Name" FontSize="28" HorizontalOptions="Center"
+            VerticalOptions="Center" FontAttributes="Bold" />
+                    <Entry Text="Bio + Hashtags" TextColor="Black"
+            BackgroundColor="#FCB259" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HeightRequest="50" BackgroundColor="#FCB259" Padding="5">
+                    <StackLayout Spacing="0" BackgroundColor="#FCB259" Orientation="Horizontal" HorizontalOptions="Start">
+                        <Label Text="test" FontSize="28" HorizontalOptions="Center" TextColor="Black"/>
+                    </StackLayout>
+                    <StackLayout Spacing="0" BackgroundColor="#FCB259" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Label Text="test" FontSize="28" HorizontalOptions="Center" TextColor="Black"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontSize="14" Text="Age:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="35" TextColor="Black" BackgroundColor="#FCB259" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontSize="14" Text="Interests:" TextColor="Black"
+          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="Xamarin.Forms" TextColor="Black" BackgroundColor="#FCB259" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontSize="14" Text="Ask me about:" TextColor="Black"
+          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
+                    <Entry HorizontalOptions="FillAndExpand" Text="Xamarin, C#, .NET, Mono..." TextColor="Black" BackgroundColor="#FCB259" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

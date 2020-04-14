@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App2.StartPageFiles.StartPage">
+    <ContentPage.Content>
+  
+        <StackLayout Padding="12,12,12,12" BackgroundColor="#FCB259">
+            <Button x:Name="authButton" Text="Войти" FontAttributes="Bold" Clicked="authButton_Click" Padding="30,40" Margin="30,250,30,15"  BackgroundColor="#F38E4C"   ></Button>
+            <Button x:Name="regButton" Text="Регистрация" FontAttributes="Bold" Clicked="regButton_Click" Padding="30,40" Margin="30,0,30,10"  BackgroundColor="#CD9C3A"  ></Button>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Пропустить"
+                            TextColor="Black"
+                            TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://docs.microsoft.com/xamarin/" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
