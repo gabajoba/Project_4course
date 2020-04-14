@@ -6,6 +6,16 @@
             xmlns:views="clr-namespace:App2.Views"
              mc:Ignorable="d"
              x:Class="App2.AppShell">
+
+    
+    <MenuItem Text="Random"
+              IconImageSource="menu1.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              IconImageSource="menu1.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
+    
     <FlyoutItem>
         <Tab Title="Menu" Icon="menu1.ico">
             <ShellContent ContentTemplate="{DataTemplate views:MenuPage}"/>
@@ -21,5 +31,6 @@
 
         </Tab>
     </FlyoutItem>
+   
 
 </Shell>
