@@ -7,12 +7,13 @@
              x:Class="App2.StartPageFiles.StartPage">
     <ContentPage.Content>
   
-        <StackLayout Padding="12,12,12,12" BackgroundColor="#FCB259">
-            <Button x:Name="authButton" Text="Войти" FontAttributes="Bold" Clicked="authButton_Click" Padding="30,40" Margin="30,250,30,15"  BackgroundColor="#F38E4C"   ></Button>
-            <Button x:Name="regButton" Text="Регистрация" FontAttributes="Bold" Clicked="regButton_Click" Padding="30,40" Margin="30,0,30,10"  BackgroundColor="#CD9C3A"  ></Button>
-            <Label>
+        <StackLayout Padding="12,12,12,12" BackgroundColor="#FCB259" >
+            <Button x:Name="authButton" Text="Войти" TextColor="#E4E3E3" FontAttributes="Bold" Clicked="authButton_Click" BackgroundColor="#DC2907" HorizontalOptions="Center" Margin="0,250,0,5"  HeightRequest="100" WidthRequest="300"  ></Button>
+            <Button x:Name="regButton" Text="Регистрация" TextColor="#E4E3E3" FontAttributes="Bold" Clicked="regButton_Click" 
+                HeightRequest="100" WidthRequest="300" Margin="0,5" BackgroundColor="#FF5F16" HorizontalOptions="Center" ></Button>
+            <Label HorizontalOptions="Center">
                 <Label.FormattedText>
-                    <FormattedString>
+                    <FormattedString >
                         <Span Text="Пропустить"
                             TextColor="Black"
                             TextDecorations="Underline">
