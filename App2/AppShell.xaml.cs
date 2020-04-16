@@ -16,6 +16,6 @@ namespace App2
         {
             InitializeComponent();
         }
-        //white
+        //pOpkov is white
     }
 }
