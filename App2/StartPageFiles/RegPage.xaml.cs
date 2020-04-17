@@ -28,7 +28,33 @@ namespace App2.StartPageFiles
 
         private void regAcceptButton_Clicked(object sender, EventArgs e)
         {
-            //niggers
+            //проверка введённых данных
+            if (_username.Text == "")
+            {
+                DisplayAlert("Ошибка", "Введите имя", "OK");
+            }
+            else if (_phone.Text == "")
+            {
+                DisplayAlert("Ошибка", "Введите номер телефона", "OK");
+            }
+            else if (_mail.Text == "")
+            {
+                DisplayAlert("Ошибка", "Введите почту", "OK");
+            }
+            else if (_pass1.Text == "" || _pass2.Text == "")
+            {
+                DisplayAlert("Ошибка", "Введите пароль", "OK");
+            }
+            else if (_pass1.Text != _pass2.Text)
+            {
+                DisplayAlert("Ошибка", "Пароль не совпадает", "OK");
+            }
+            else
+            {
+                //всё в порядке
+                DisplayAlert("", "Всё норм", "OK");
+            }
+
         }
     }
 }
