@@ -6,12 +6,48 @@
              mc:Ignorable="d"
              x:Class="App2.StartPageFiles.StartPage">
     <ContentPage.Content>
-  
-        <StackLayout Padding="12,12,12,12" BackgroundColor="#FCB259" >
-            <Button x:Name="authButton" Text="Войти" TextColor="#E4E3E3" FontAttributes="Bold" Clicked="authButton_Click" BackgroundColor="#DC2907" HorizontalOptions="Center" Margin="0,250,0,5"  HeightRequest="100" WidthRequest="300"  ></Button>
-            <Button x:Name="regButton" Text="Регистрация" TextColor="#E4E3E3" FontAttributes="Bold" Clicked="regButton_Click" 
-                HeightRequest="100" WidthRequest="300" Margin="0,5" BackgroundColor="#FF5F16" HorizontalOptions="Center" ></Button>
-            <Label HorizontalOptions="Center">
+
+        <StackLayout Padding="12,12,12,12"  >
+            <!-- Войти -->
+            <Button x:Name="authButton" 
+                    Text="Войти" 
+                    TextColor="#E4E3E3" 
+                    BackgroundColor="#DC2907" 
+                    FontAttributes="Bold" 
+                    
+                    Clicked="authButton_Clicked" 
+                    
+                    Margin="0,250,0,5"  
+                    HorizontalOptions="Center" 
+                    HeightRequest="100" 
+                    WidthRequest="300"/>
+            <!-- Регистрация -->
+            <Button x:Name="regButton" 
+                    Text="Регистрация" 
+                    TextColor="#E4E3E3" 
+                    BackgroundColor="#FF6900" 
+                    FontAttributes="Bold" 
+                    
+                    Clicked="regButton_Clicked" 
+                                        
+                    Margin="0,5"                   
+                    HorizontalOptions="Center" 
+                    HeightRequest="100"
+                    WidthRequest="300"/>
+            <!-- Пропустить -->
+            <Button x:Name="skipButton"
+                    Text="Пропустить" 
+                    BackgroundColor="Transparent" 
+                    TextColor="Black" 
+                    FontAttributes="Italic" 
+                    FontSize="Small"
+                    
+                    Clicked="regButton_Clicked" 
+                    
+                    Margin="0,5" 
+                    HorizontalOptions="Center"/>
+            
+            <!--<Label HorizontalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString >
                         <Span Text="Пропустить"
@@ -24,7 +60,7 @@
                         </Span>
                     </FormattedString>
                 </Label.FormattedText>
-            </Label>
+            </Label>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

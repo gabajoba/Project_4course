@@ -7,37 +7,107 @@
              x:Class="App2.StartPageFiles.RegPage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="0" Padding="0" BackgroundColor="#FCB259">
-                <Button BorderRadius="30" HeightRequest="60" WidthRequest="60"
-          BackgroundColor="Red" HorizontalOptions="Center" VerticalOptions="Start" />
-                <StackLayout HeightRequest="100" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" BackgroundColor="#FCB259">
-                    <Label Text="User Name" FontSize="28" HorizontalOptions="Center"
-            VerticalOptions="Center" FontAttributes="Bold" />
-                    <Entry Text="Bio + Hashtags" TextColor="Black"
-            BackgroundColor="#FCB259" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+            <StackLayout Spacing="15" Padding="0" BackgroundColor="#FCB259">
+                <!-- Имя -->
+                <StackLayout HeightRequest="100" 
+                             VerticalOptions="Start" 
+                             HorizontalOptions="FillAndExpand" 
+                             Spacing="5" 
+                             BackgroundColor="#FCB259">
+                    <Label Text="Имя" 
+                           FontSize="Large" 
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" 
+                           FontAttributes="Bold" />
+                    <Entry Placeholder="Enter nigger"
+                           TextColor="Black"
+                           FontSize="Medium"
+                           BackgroundColor="#FCB259" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="CenterAndExpand" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HeightRequest="50" BackgroundColor="#FCB259" Padding="5">
-                    <StackLayout Spacing="0" BackgroundColor="#FCB259" Orientation="Horizontal" HorizontalOptions="Start">
-                        <Label Text="test" FontSize="28" HorizontalOptions="Center" TextColor="Black"/>
-                    </StackLayout>
-                    <StackLayout Spacing="0" BackgroundColor="#FCB259" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Label Text="test" FontSize="28" HorizontalOptions="Center" TextColor="Black"/>
-                    </StackLayout>
+                <!-- Номер телефона -->
+                <StackLayout HeightRequest="100" 
+                             VerticalOptions="Start" 
+                             HorizontalOptions="FillAndExpand" 
+                             Spacing="15" 
+                             BackgroundColor="#FCB259">
+                    <Label Text="Номер телефона" 
+                           FontSize="Large"  
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" 
+                           FontAttributes="Bold" />
+                    <Entry Placeholder="Введите номер телефона"
+                           TextColor="Black"
+                           BackgroundColor="#FCB259" 
+                           FontSize="Medium"
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="CenterAndExpand" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label FontSize="14" Text="Age:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                    <Entry HorizontalOptions="FillAndExpand" Text="35" TextColor="Black" BackgroundColor="#FCB259" />
+                <!-- Электронная почта -->
+                <StackLayout HeightRequest="100" 
+                             VerticalOptions="Start" 
+                             HorizontalOptions="FillAndExpand" 
+                             Spacing="15" 
+                             BackgroundColor="Transparent">
+                    <Label Text="Электронная почта" 
+                           FontSize="Large" 
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" 
+                           FontAttributes="Bold" />
+                    <Entry Placeholder="Введите EMail"
+                           TextColor="Black"
+                           FontSize="Medium"
+                           BackgroundColor="#FCB259" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="CenterAndExpand" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label FontSize="14" Text="Interests:" TextColor="Black"
-          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                    <Entry HorizontalOptions="FillAndExpand" Text="Xamarin.Forms" TextColor="Black" BackgroundColor="#FCB259" />
+                <!-- Пароль -->
+                
+                <StackLayout HeightRequest="150" 
+                             VerticalOptions="Start" 
+                             HorizontalOptions="FillAndExpand" 
+                             Spacing="15" 
+                             BackgroundColor="Transparent">
+                    <Label Text="Пароль" 
+                           FontSize="Large" 
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" 
+                           FontAttributes="Bold" />
+                    
+                    
+                    <Entry x:Name="_pass1"
+                           Placeholder="Введите пароль"
+                           IsPassword="True"
+                           TextColor="Black"
+                           FontSize="Medium"
+                           BackgroundColor="#FCB259" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="CenterAndExpand" />
+                    <!-- Подтверждение пароля -->
+                    <Entry x:Name="_pass2"
+                           Placeholder="Введите пароль еще раз"
+                           IsPassword="True"
+                           TextColor="Black"
+                           FontSize="Medium"
+                           BackgroundColor="#FCB259" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="CenterAndExpand"
+                           />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label FontSize="14" Text="Ask me about:" TextColor="Black"
-          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
-                    <Entry HorizontalOptions="FillAndExpand" Text="Xamarin, C#, .NET, Mono..." TextColor="Black" BackgroundColor="#FCB259" />
-                </StackLayout>
+                <Button x:Name="regButton" 
+                    Text="Регистрация" 
+                    TextColor="#E4E3E3" 
+                    BackgroundColor="#FF6900" 
+                    FontAttributes="Bold" 
+                    
+                    Clicked="regAcceptButton_Clicked" 
+                                        
+                                    
+                    HorizontalOptions="Center" Margin="0,35,0,0" Padding="125,15,125,15" 
+                        
+                    />
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

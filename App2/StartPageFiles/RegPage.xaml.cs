@@ -26,5 +26,9 @@ namespace App2.StartPageFiles
             //return base.OnBackButtonPressed();
         }
 
+        private void regAcceptButton_Clicked(object sender, EventArgs e)
+        {
+            //niggers
+        }
     }
 }
