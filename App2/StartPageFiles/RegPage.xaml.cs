@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -29,6 +30,7 @@ namespace App2.StartPageFiles
 
         private void regAcceptButton_Clicked(object sender, EventArgs e)
         {
+            Regex regEx = new Regex("^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$"); //work
             //проверка введённых данных
             if (_username.Text == "")
             {
@@ -53,6 +55,7 @@ namespace App2.StartPageFiles
             else
             {
                 //всё в порядке
+
                 DisplayAlert("", "Всё норм", "OK");
             }
 

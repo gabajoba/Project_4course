@@ -62,7 +62,7 @@
                     <Entry x:Name="_phone"
                            Text="{Binding Phone}"
                            Keyboard="Telephone"
-                           Placeholder="Введите номер телефона"
+                           Placeholder="Введите номер телефона(начиная с 7)"
                            TextColor="Black"
                            BackgroundColor="Transparent" 
                            FontSize="Medium"
@@ -71,7 +71,7 @@
                            >
                         <Entry.Behaviors>
                             <behavior:PhoneNumberMaskBehavior x:Name="PhoneMask" />
-                            <behavior:EntryLengthValidator MaxLength="13"/>
+                            <behavior:EntryLengthValidator MaxLength="15"/>
                         </Entry.Behaviors>
                     </Entry>
                 </StackLayout>
