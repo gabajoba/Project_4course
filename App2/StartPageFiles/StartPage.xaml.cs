@@ -28,5 +28,13 @@ namespace App2.StartPageFiles
             await Navigation.PushAsync(new AuthPage());
         }
 
+        private  void skipButton_Clicked(object sender, EventArgs e)
+        {
+            // await Navigation.PushAsync(new AppShell());
+            // var page = new NavigationPage(new AppShell());
+            var page = new AppShell();
+                 
+             (Application.Current.MainPage) = page;
+        }
     }
 }

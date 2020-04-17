@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="App2.Views.ProfilePage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="#FCB259" >
             <Label Text="Welcome to ProfilePage!" FontSize="20" TextColor="Blue"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

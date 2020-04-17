@@ -5,9 +5,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="App2.StartPageFiles.StartPage">
-    <ContentPage.Content>
 
-        <StackLayout Padding="12,12,12,12"  >
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center">
+            <Label Text="Cock&amp;Co."
+                   
+                   VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="25"/>
+            <!--<Image Source="cart"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="End" />-->
+        </StackLayout>
+    </NavigationPage.TitleView>
+ 
+    <ContentPage.Content >
+
+        <StackLayout Padding="12,12,12,12" >
             <!-- Войти -->
             <Button x:Name="authButton" 
                     Text="Войти" 
@@ -42,7 +58,7 @@
                     FontAttributes="Italic" 
                     FontSize="Small"
                     
-                    Clicked="regButton_Clicked" 
+                    Clicked="skipButton_Clicked" 
                     
                     Margin="0,5" 
                     HorizontalOptions="Center"/>

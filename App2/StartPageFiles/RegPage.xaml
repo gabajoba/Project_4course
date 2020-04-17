@@ -5,24 +5,42 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="App2.StartPageFiles.RegPage">
-    <ContentPage.Content>
+    
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Регистрация"
+                   HorizontalOptions="Start"
+                   VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="20"/>
+            <Image Source="test"
+                   Aspect="AspectFit"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="End" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <NavigationPage.ba>
+        
+    </NavigationPage.ba>
+    <ContentPage.Content
+       >
         <ScrollView>
-            <StackLayout Spacing="15" Padding="0" BackgroundColor="#FCB259">
+            <StackLayout Spacing="15" Padding="0">
                 <!-- Имя -->
                 <StackLayout HeightRequest="100" 
                              VerticalOptions="Start" 
                              HorizontalOptions="FillAndExpand" 
                              Spacing="5" 
-                             BackgroundColor="#FCB259">
+                             BackgroundColor="Transparent">
                     <Label Text="Имя" 
                            FontSize="Large" 
                            HorizontalOptions="Center"
                            VerticalOptions="Center" 
                            FontAttributes="Bold" />
-                    <Entry Placeholder="Enter nigger"
+                    <Entry Placeholder="Введите имя"
                            TextColor="Black"
                            FontSize="Medium"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand" />
                 </StackLayout>
@@ -31,7 +49,7 @@
                              VerticalOptions="Start" 
                              HorizontalOptions="FillAndExpand" 
                              Spacing="15" 
-                             BackgroundColor="#FCB259">
+                             BackgroundColor="Transparent">
                     <Label Text="Номер телефона" 
                            FontSize="Large"  
                            HorizontalOptions="Center"
@@ -39,7 +57,7 @@
                            FontAttributes="Bold" />
                     <Entry Placeholder="Введите номер телефона"
                            TextColor="Black"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            FontSize="Medium"
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand" />
@@ -58,7 +76,7 @@
                     <Entry Placeholder="Введите EMail"
                            TextColor="Black"
                            FontSize="Medium"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand" />
                 </StackLayout>
@@ -77,11 +95,12 @@
                     
                     
                     <Entry x:Name="_pass1"
+                           MaxLength="25"
                            Placeholder="Введите пароль"
                            IsPassword="True"
                            TextColor="Black"
                            FontSize="Medium"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand" />
                     <!-- Подтверждение пароля -->
@@ -90,7 +109,7 @@
                            IsPassword="True"
                            TextColor="Black"
                            FontSize="Medium"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand"
                            />
