@@ -42,7 +42,7 @@
                            VerticalOptions="Center" 
                            FontAttributes="Bold" />
                     <Entry x:Name="_phone"
-                           Text="{Binding Phone}"
+                           Text=""
                            Keyboard="Telephone"
                            Placeholder="Введите номер телефона"
                            TextColor="Black"
@@ -53,7 +53,7 @@
                            >
                         <Entry.Behaviors>
                             <behavior:PhoneNumberMaskBehavior x:Name="PhoneMask" />
-                            <behavior:EntryLengthValidator MaxLength="13"/>
+                            <behavior:EntryLengthValidator MaxLength="15"/>
                         </Entry.Behaviors>
                     </Entry>
                 </StackLayout>

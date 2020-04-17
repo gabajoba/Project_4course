@@ -38,19 +38,23 @@ namespace App2
                     return;
 
                 var value = args.NewTextValue;
-
-                if (value.Length == 3)
+                
+                if (value.Length == 1)
+                {
+                    ((Entry)sender).Text += "(";
+                    return;
+                }
+                if (value.Length == 5)
                 {
                     ((Entry)sender).Text += ")";
                     return;
                 }
-
-                if (value.Length == 7)
+                if (value.Length == 9)
                 {
                     ((Entry)sender).Text += "-";
                     return;
                 }
-                if (value.Length == 10)
+                if (value.Length == 12)
                 {
                     ((Entry)sender).Text += "-";
                     return;
