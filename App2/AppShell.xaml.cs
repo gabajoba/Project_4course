@@ -16,8 +16,6 @@ namespace App2
         {
             InitializeComponent();
         }
-        //white
-       // testing github features
-       //testing github features 2
+        //pOpkov is white
     }
 }
