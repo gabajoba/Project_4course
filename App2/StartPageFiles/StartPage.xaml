@@ -42,7 +42,7 @@
                     FontAttributes="Italic" 
                     FontSize="Small"
                     
-                    Clicked="regButton_Clicked" 
+                    Clicked="skipButton_Clicked" 
                     
                     Margin="0,5" 
                     HorizontalOptions="Center"/>
