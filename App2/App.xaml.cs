@@ -12,8 +12,9 @@ namespace App2
             
             var page = new NavigationPage(new App2.StartPageFiles.StartPage());
             page.BackgroundColor = Color.FromHex("#FCB259");
-            page.BarBackgroundColor = Color.FromHex("#ff8256");
-            
+            page.BarBackgroundColor = Color.FromHex("#FF6900");
+
+
             page.BarTextColor = Color.Black;
            
             MainPage = page;
