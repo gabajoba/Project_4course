@@ -30,15 +30,18 @@ namespace App2.StartPageFiles
 
         private void regAcceptButton_Clicked(object sender, EventArgs e)
         {
-            Regex regEx = new Regex("^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$"); //work
+            var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
+            Regex regEx = new Regex(pattern);
+
+
             //проверка введённых данных
             if (_username.Text == "")
             {
                 DisplayAlert("Ошибка", "Введите имя", "OK");
             }
-            else if (_phone.Text == "")
-            {
-                DisplayAlert("Ошибка", "Введите номер телефона", "OK");
+            else if (regEx.IsMatch(_phone.Text) == false)
+            {               
+                    DisplayAlert("Ошибка", "Некорректно введен номер телефона", "ОК");               
             }
             else if (_mail.Text == "")
             {

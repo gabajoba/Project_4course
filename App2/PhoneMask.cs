@@ -38,31 +38,49 @@ namespace App2
                     return;
 
                 var value = args.NewTextValue;
-                if (value.Length == 0)
+                switch (value.Length)
                 {
-                    ((Entry)sender).Text += "8";
-                    return;
+                    case 1: 
+                        {
+                            ((Entry)sender).Text += "(";
+                            return;
+                        }
+                    case 5:
+                        {
+                            ((Entry)sender).Text += ")";
+                            return;
+                        }
+                    case 9:
+                        {
+                            ((Entry)sender).Text += "-";
+                            return;
+                        }
+                    case 12:
+                        {
+                            ((Entry)sender).Text += "-";
+                            return;
+                        }
+                    //case 2:
+                    //    {
+                    //        ((Entry)sender).Text.Remove(((Entry)sender).Text.Length - 1);
+                    //        return;
+                    //    }
+                    //case 6:
+                    //    {
+                    //        ((Entry)sender).Text.Remove(((Entry)sender).Text.Length - 1);
+                    //        return;
+                    //    }
+                    //case 10:
+                    //    {
+                    //        ((Entry)sender).Text.Remove(((Entry)sender).Text.Length - 1);
+                    //        return;
+                    //    }
                 }
-                if (value.Length == 1)
-                {
-                    ((Entry)sender).Text += "(";
-                    return;
-                }
-                if (value.Length == 5)
-                {
-                    ((Entry)sender).Text += ")";
-                    return;
-                }
-                if (value.Length == 9)
-                {
-                    ((Entry)sender).Text += "-";
-                    return;
-                }
-                if (value.Length == 12)
-                {
-                    ((Entry)sender).Text += "-";
-                    return;
-                }
+
+
+
+              
+                
 
                 ((Entry)sender).Text = args.NewTextValue;
             }
