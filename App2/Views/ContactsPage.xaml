@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="App2.Views.ContactsPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#FCB259">
+        <StackLayout BackgroundColor="#ffc24a">
             <Label Text="Welcome to Contacts Page" TextColor="Purple"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

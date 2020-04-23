@@ -31,7 +31,7 @@
                     BackgroundColor="#DC2907" 
                     FontAttributes="Bold" 
                     
-                    Clicked="authButton_Clicked" 
+                    Clicked="AuthButton_Clicked" 
                     
                     Margin="0,250,0,5"  
                     HorizontalOptions="Center" 
@@ -44,7 +44,7 @@
                     BackgroundColor="#FF6900" 
                     FontAttributes="Bold" 
                     
-                    Clicked="regButton_Clicked" 
+                    Clicked="RegButton_Clicked" 
                                         
                     Margin="0,5"                   
                     HorizontalOptions="Center" 
@@ -58,7 +58,7 @@
                     FontAttributes="Italic" 
                     FontSize="Small"
                     
-                    Clicked="skipButton_Clicked" 
+                    Clicked="SkipButton_Clicked" 
                     
                     Margin="0,5" 
                     HorizontalOptions="Center"/>

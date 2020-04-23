@@ -19,16 +19,16 @@ namespace App2.StartPageFiles
             
         }
         
-        private async void regButton_Clicked(object sender, EventArgs e)
+        private async void RegButton_Clicked(object sender, EventArgs e)
         {
            await Navigation.PushAsync(new RegPage());
         }
-        private async void authButton_Clicked(object sender, EventArgs e)
+        private async void AuthButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AuthPage());
         }
 
-        private  void skipButton_Clicked(object sender, EventArgs e)
+        private  void SkipButton_Clicked(object sender, EventArgs e)
         {
             // await Navigation.PushAsync(new AppShell());
             // var page = new NavigationPage(new AppShell());
