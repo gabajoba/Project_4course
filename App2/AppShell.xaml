@@ -4,19 +4,28 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:App2.Views"
+             xmlns:controls="clr-namespace:App2.Controls"       
              mc:Ignorable="d"
              x:Class="App2.AppShell"
-             BackgroundColor="#FF6900"
-             FlyoutBackgroundColor="#FCB259"
-             TitleColor="OrangeRed"
+       
+             BackgroundColor="#ff4400"
+             FlyoutBackgroundColor="#ffac08"
+       
+             TitleColor="White"
              DisabledColor="Gray"
-             UnselectedColor="White"
-       FlyoutBehavior="Disabled">
+             UnselectedColor="Black"
+       
+             FlyoutBehavior="Disabled"
+             FlyoutHeaderBehavior="CollapseOnScroll">
+    <!--Navigating="OnNavigating"
+             Navigated="OnNavigated">-->
              <!--DisabledColor="#B4FFFFFF"
              UnselectedColor="#95FFFFFF"-->
-              
-    
-   
+
+
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
     <FlyoutItem>
         <Tab Title="Menu" Icon="menu1.ico">
             <ShellContent ContentTemplate="{DataTemplate views:MenuPage}"/>
