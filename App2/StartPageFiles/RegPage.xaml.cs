@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -29,7 +30,38 @@ namespace App2.StartPageFiles
 
         private void regAcceptButton_Clicked(object sender, EventArgs e)
         {
-            //niggers
+            var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
+            Regex regEx = new Regex(pattern);
+
+
+            //проверка введённых данных
+            if (_username.Text == "")
+            {
+                DisplayAlert("Ошибка", "Введите имя", "OK");
+            }
+            else if (regEx.IsMatch(_phone.Text) == false)
+            {               
+                    DisplayAlert("Ошибка", "Некорректно введен номер телефона", "ОК");               
+            }
+            else if (_mail.Text == "")
+            {
+                DisplayAlert("Ошибка", "Введите почту", "OK");
+            }
+            else if (_pass1.Text == "" || _pass2.Text == "")
+            {
+                DisplayAlert("Ошибка", "Введите пароль", "OK");
+            }
+            else if (_pass1.Text != _pass2.Text)
+            {
+                DisplayAlert("Ошибка", "Пароль не совпадает", "OK");
+            }
+            else
+            {
+                //всё в порядке
+
+                DisplayAlert("", "Всё норм", "OK");
+            }
+
         }
     }
 }

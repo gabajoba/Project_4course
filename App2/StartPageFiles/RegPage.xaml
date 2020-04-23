@@ -3,25 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:behavior="clr-namespace:App2" 
              mc:Ignorable="d"
              x:Class="App2.StartPageFiles.RegPage">
-    
+
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
+        <Grid >
             <Label Text="Регистрация"
                    HorizontalOptions="Start"
-                   VerticalOptions="CenterAndExpand"
+                  VerticalOptions="CenterAndExpand"
                    FontAttributes="Bold"
                    FontSize="20"/>
-            <Image Source="test"
-                   Aspect="AspectFit"
+            <Image Source="logo.png"
+                   Aspect="AspectFill"
                    VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="End" />
-        </StackLayout>
+                   HorizontalOptions="End" 
+                   HeightRequest="60"/>
+
+        </Grid>
     </NavigationPage.TitleView>
-    <NavigationPage.ba>
-        
-    </NavigationPage.ba>
+    
     <ContentPage.Content
        >
         <ScrollView>
@@ -37,7 +38,10 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center" 
                            FontAttributes="Bold" />
-                    <Entry Placeholder="Введите имя"
+                    <Entry x:Name="_username"
+                           Text=""
+                           Keyboard="Text"
+                           Placeholder="Введите имя"
                            TextColor="Black"
                            FontSize="Medium"
                            BackgroundColor="Transparent" 
@@ -55,12 +59,21 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center" 
                            FontAttributes="Bold" />
-                    <Entry Placeholder="Введите номер телефона"
+                    <Entry x:Name="_phone"
+                           Text="{Binding Phone}"
+                           Keyboard="Telephone"
+                           Placeholder="Введите номер телефона(начиная с 7)"
                            TextColor="Black"
                            BackgroundColor="Transparent" 
                            FontSize="Medium"
                            HorizontalOptions="FillAndExpand" 
-                           VerticalOptions="CenterAndExpand" />
+                           VerticalOptions="CenterAndExpand"
+                           >
+                        <Entry.Behaviors>
+                            <behavior:PhoneNumberMaskBehavior x:Name="PhoneMask" />
+                            <behavior:EntryLengthValidator MaxLength="15"/>
+                        </Entry.Behaviors>
+                    </Entry>
                 </StackLayout>
                 <!-- Электронная почта -->
                 <StackLayout HeightRequest="100" 
@@ -73,7 +86,10 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center" 
                            FontAttributes="Bold" />
-                    <Entry Placeholder="Введите EMail"
+                    <Entry x:Name="_mail"
+                           Text=""
+                           Keyboard="Email"
+                           Placeholder="Введите EMail"
                            TextColor="Black"
                            FontSize="Medium"
                            BackgroundColor="Transparent" 
@@ -81,7 +97,6 @@
                            VerticalOptions="CenterAndExpand" />
                 </StackLayout>
                 <!-- Пароль -->
-                
                 <StackLayout HeightRequest="150" 
                              VerticalOptions="Start" 
                              HorizontalOptions="FillAndExpand" 
@@ -92,10 +107,9 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center" 
                            FontAttributes="Bold" />
-                    
-                    
                     <Entry x:Name="_pass1"
-                           MaxLength="25"
+                           Text=""
+                           Keyboard="Default"
                            Placeholder="Введите пароль"
                            IsPassword="True"
                            TextColor="Black"
@@ -105,6 +119,8 @@
                            VerticalOptions="CenterAndExpand" />
                     <!-- Подтверждение пароля -->
                     <Entry x:Name="_pass2"
+                           Text=""
+                           Keyboard="Default"
                            Placeholder="Введите пароль еще раз"
                            IsPassword="True"
                            TextColor="Black"

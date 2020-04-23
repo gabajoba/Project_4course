@@ -7,19 +7,19 @@
              x:Class="App2.StartPageFiles.AuthPage">
     
     <NavigationPage.TitleView>
-        
-        <StackLayout Orientation="Horizontal">
-                <Label Text="Авторизация"
+        <Grid >
+            <Label Text="Авторизация"
                    HorizontalOptions="Start"
-                   VerticalOptions="CenterAndExpand"
+                  VerticalOptions="CenterAndExpand"
                    FontAttributes="Bold"
                    FontSize="20"/>
-            <Image Source="test"
+            <Image Source="logo.png"
                    Aspect="AspectFill"
                    VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="End" />
-                
-            </StackLayout>
+                   HorizontalOptions="End" 
+                   HeightRequest="60"/>
+
+        </Grid>
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
