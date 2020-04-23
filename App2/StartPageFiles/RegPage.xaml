@@ -6,23 +6,23 @@
              xmlns:behavior="clr-namespace:App2" 
              mc:Ignorable="d"
              x:Class="App2.StartPageFiles.RegPage">
-    
+
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
+        <Grid >
             <Label Text="Регистрация"
                    HorizontalOptions="Start"
-                   VerticalOptions="CenterAndExpand"
+                  VerticalOptions="CenterAndExpand"
                    FontAttributes="Bold"
                    FontSize="20"/>
-            <Image Source="test"
-                   Aspect="AspectFit"
+            <Image Source="logo.png"
+                   Aspect="AspectFill"
                    VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="End" />
-        </StackLayout>
+                   HorizontalOptions="End" 
+                   HeightRequest="60"/>
+
+        </Grid>
     </NavigationPage.TitleView>
-    <NavigationPage.ba>
-        
-    </NavigationPage.ba>
+    
     <ContentPage.Content
        >
         <ScrollView>
