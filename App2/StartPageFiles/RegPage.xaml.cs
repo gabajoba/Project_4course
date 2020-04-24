@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -17,6 +18,7 @@ namespace App2.StartPageFiles
            
             InitializeComponent();
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#ff8256");
+            ((NavigationPage)Application.Current.MainPage).Title = "Регистрация";
         }
 
         protected override bool OnBackButtonPressed()
@@ -28,14 +30,18 @@ namespace App2.StartPageFiles
 
         private void regAcceptButton_Clicked(object sender, EventArgs e)
         {
+            var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
+            Regex regEx = new Regex(pattern);
+
+
             //проверка введённых данных
             if (_username.Text == "")
             {
                 DisplayAlert("Ошибка", "Введите имя", "OK");
             }
-            else if (_phone.Text == "")
-            {
-                DisplayAlert("Ошибка", "Введите номер телефона", "OK");
+            else if (regEx.IsMatch(_phone.Text) == false)
+            {               
+                    DisplayAlert("Ошибка", "Некорректно введен номер телефона", "ОК");               
             }
             else if (_mail.Text == "")
             {
@@ -52,6 +58,7 @@ namespace App2.StartPageFiles
             else
             {
                 //всё в порядке
+
                 DisplayAlert("", "Всё норм", "OK");
             }
 

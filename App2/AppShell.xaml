@@ -3,19 +3,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-            xmlns:views="clr-namespace:App2.Views"
+             xmlns:views="clr-namespace:App2.Views"
+             xmlns:controls="clr-namespace:App2.Controls"       
              mc:Ignorable="d"
-             x:Class="App2.AppShell">
+             x:Class="App2.AppShell"
+       
+             BackgroundColor="#ff4400"
+             FlyoutBackgroundColor="#ffac08"
+       
+             TitleColor="White"
+             DisabledColor="Gray"
+             UnselectedColor="Black"
+       
+             FlyoutBehavior="Disabled"
+             FlyoutHeaderBehavior="CollapseOnScroll">
+    <!--Navigating="OnNavigating"
+             Navigated="OnNavigated">-->
+             <!--DisabledColor="#B4FFFFFF"
+             UnselectedColor="#95FFFFFF"-->
+    
+    
+    <!--<Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#455A64" />
+            <Setter Property="Shell.ForegroundColor"
+                    Value="White" />
+            <Setter Property="Shell.TitleColor"
+                    Value="White" />
+            <Setter Property="Shell.DisabledColor"
+                    Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor"
+                    Value="#95FFFFFF" />
+        </Style>
+        <Style TargetType="ShellItem"
+               BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="DomesticShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#039BE6" />
+        </Style>
+        <Style x:Key="MonkeysShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#689F39" />
+        </Style>
+        <Style x:Key="ElephantsShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#ED3B3B" />
+        </Style>
+        <Style x:Key="BearsShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#546DFE" />
+        </Style>
+        <Style x:Key="AboutShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#96d1ff" />
+        </Style>
+    </Shell.Resources>-->
+    
+    
 
-    
-    <MenuItem Text="Random"
-              IconImageSource="menu1.png"
-              Command="{Binding RandomPageCommand}" />
-    <MenuItem Text="Help"
-              IconImageSource="menu1.png"
-              Command="{Binding HelpCommand}"
-              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
-    
+
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
     <FlyoutItem>
         <Tab Title="Menu" Icon="menu1.ico">
             <ShellContent ContentTemplate="{DataTemplate views:MenuPage}"/>
@@ -31,6 +92,6 @@
 
         </Tab>
     </FlyoutItem>
-   
+
 
 </Shell>

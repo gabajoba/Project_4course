@@ -16,6 +16,21 @@ namespace App2
         {
             InitializeComponent();
         }
-        //pOpkov is white
+        //white
+        // testing github features
+        //testing github features 2
+
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    var page = new StartPageFiles.StartPage();
+
+        //    (Application.Current.MainPage) = page;
+        //    return true;
+        //    //return base.OnBackButtonPressed();
+        //}
+
+
+
+
     }
 }

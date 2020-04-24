@@ -5,9 +5,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="App2.StartPageFiles.AuthPage">
+    
+    <NavigationPage.TitleView>
+        <Grid >
+            <Label Text="Авторизация"
+                   HorizontalOptions="Start"
+                  VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="20"/>
+            <Image Source="logo.png"
+                   Aspect="AspectFill"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="End" 
+                   HeightRequest="60"/>
+
+        </Grid>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to auth page!"
+            <Label Text="Welcome NIGGER"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

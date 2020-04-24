@@ -17,7 +17,7 @@ namespace App2.StartPageFiles
             
             InitializeComponent();
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#ff8256");
-            
+            ((NavigationPage)Application.Current.MainPage).Title = "Авторизация";
         }
         protected override bool OnBackButtonPressed()
         {

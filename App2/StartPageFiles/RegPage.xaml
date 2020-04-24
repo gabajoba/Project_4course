@@ -6,15 +6,33 @@
              xmlns:behavior="clr-namespace:App2" 
              mc:Ignorable="d"
              x:Class="App2.StartPageFiles.RegPage">
-    <ContentPage.Content>
+
+    <NavigationPage.TitleView>
+        <Grid >
+            <Label Text="Регистрация"
+                   HorizontalOptions="Start"
+                  VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="20"/>
+            <Image Source="logo.png"
+                   Aspect="AspectFill"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="End" 
+                   HeightRequest="60"/>
+
+        </Grid>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content
+       >
         <ScrollView>
-            <StackLayout Spacing="15" Padding="0" BackgroundColor="#FCB259">
+            <StackLayout Spacing="15" Padding="0">
                 <!-- Имя -->
                 <StackLayout HeightRequest="100" 
                              VerticalOptions="Start" 
                              HorizontalOptions="FillAndExpand" 
                              Spacing="5" 
-                             BackgroundColor="#FCB259">
+                             BackgroundColor="Transparent">
                     <Label Text="Имя" 
                            FontSize="Large" 
                            HorizontalOptions="Center"
@@ -26,7 +44,7 @@
                            Placeholder="Введите имя"
                            TextColor="Black"
                            FontSize="Medium"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand" />
                 </StackLayout>
@@ -35,7 +53,7 @@
                              VerticalOptions="Start" 
                              HorizontalOptions="FillAndExpand" 
                              Spacing="15" 
-                             BackgroundColor="#FCB259">
+                             BackgroundColor="Transparent">
                     <Label Text="Номер телефона" 
                            FontSize="Large"  
                            HorizontalOptions="Center"
@@ -44,9 +62,9 @@
                     <Entry x:Name="_phone"
                            Text=""
                            Keyboard="Telephone"
-                           Placeholder="Введите номер телефона"
+                           Placeholder="Введите номер телефона(начиная с 7)"
                            TextColor="Black"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            FontSize="Medium"
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand"
@@ -74,7 +92,7 @@
                            Placeholder="Введите EMail"
                            TextColor="Black"
                            FontSize="Medium"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand" />
                 </StackLayout>
@@ -96,7 +114,7 @@
                            IsPassword="True"
                            TextColor="Black"
                            FontSize="Medium"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand" />
                     <!-- Подтверждение пароля -->
@@ -107,7 +125,7 @@
                            IsPassword="True"
                            TextColor="Black"
                            FontSize="Medium"
-                           BackgroundColor="#FCB259" 
+                           BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand"
                            />
