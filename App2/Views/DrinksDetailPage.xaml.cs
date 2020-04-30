@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +12,7 @@ namespace App2.Views
 {
     [QueryProperty("Name", "name")]
     public partial class DrinksDetailPage : ContentPage
-    {
+    {        
         public string Name
         {
             set
@@ -22,10 +22,10 @@ namespace App2.Views
         }
         public DrinksDetailPage()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
         protected override bool OnBackButtonPressed()
-        {
+        {            
             return base.OnBackButtonPressed();
         }
 

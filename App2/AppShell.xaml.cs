@@ -18,7 +18,7 @@ namespace App2
         Random rand = new Random();
 
         public Dictionary<string, Type> Routes { get; } = new Dictionary<string, Type>();
-
+       
         public ICommand HelpCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
         public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync());
 
@@ -73,6 +73,6 @@ namespace App2
 
         void OnNavigated(object sender, ShellNavigatedEventArgs e)
         {
-        }
+       }       
     }
 }

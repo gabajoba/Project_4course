@@ -33,7 +33,7 @@
         <controls:DishSearchHandler Placeholder="Enter search term"
                                       ShowsResults="true"
                                       ItemTemplate="{StaticResource DishSearchTemplate}"
-                                      Dishes="{x:Static data:DrinksData.Drinks}"
+                                      Dishes="{x:Static data:AllDishesData.AllDishes}"
                                       SelectedItemNavigationTarget="{x:Type views:DrinksDetailPage}" />
     </Shell.SearchHandler>
 
