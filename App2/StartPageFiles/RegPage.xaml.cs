@@ -32,7 +32,7 @@ namespace App2.StartPageFiles
         {
             var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
             Regex regEx = new Regex(pattern);
-
+            
 
             //проверка введённых данных
             if (_username.Text == "")

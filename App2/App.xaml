@@ -6,6 +6,52 @@
              mc:Ignorable="d"
              x:Class="App2.App">
     <Application.Resources>
+        <DataTemplate x:Key="DishTemplate">
+            <Grid Padding="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.45*" />
+                    <ColumnDefinition Width="0.55*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" 
+                       Source="{Binding ImageUrl}" 
+                       Aspect="AspectFill"
+                       HeightRequest="140" 
+                       WidthRequest="140" />
+                <Label Grid.Column="1" 
+                       Text="{Binding Name}" 
+                       FontAttributes="Bold"
+                       
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="End"/>
+                <Label Grid.Row="1"
+                       Grid.Column="1" 
+                       Text="{Binding Price}"
+                       
+                       FontAttributes="Italic"                       
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"/>
+            </Grid>
+        </DataTemplate>
 
+        <DataTemplate x:Key="DishSearchTemplate">
+            <Grid Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*" />
+                    <ColumnDefinition Width="0.85*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding ImageUrl}" 
+                       Aspect="AspectFill"
+                       HeightRequest="40" 
+                       WidthRequest="40" />
+                <Label Grid.Column="1" 
+                       Text="{Binding Name}" 
+                       FontAttributes="Bold" />
+            </Grid>
+        </DataTemplate>
+    
     </Application.Resources>
 </Application>

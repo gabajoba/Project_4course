@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2.StartPageFiles.StartPage">
+             x:Class="App2.StartPageFiles.StartPage"
+             >
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal"
@@ -27,7 +28,7 @@
             <!-- Войти -->
             <Button x:Name="authButton" 
                     Text="Войти" 
-                    TextColor="#E4E3E3" 
+                    TextColor="White" 
                     BackgroundColor="#DC2907" 
                     FontAttributes="Bold" 
                     
@@ -40,7 +41,7 @@
             <!-- Регистрация -->
             <Button x:Name="regButton" 
                     Text="Регистрация" 
-                    TextColor="#E4E3E3" 
+                    TextColor="White" 
                     BackgroundColor="#FF6900" 
                     FontAttributes="Bold" 
                     

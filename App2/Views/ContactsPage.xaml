@@ -6,10 +6,14 @@
              mc:Ignorable="d"
              x:Class="App2.Views.ContactsPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#ffc24a">
-            <Label Text="Welcome to Contacts Page" TextColor="Purple"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="White">
+
+            <Label Text="Здесь должна была быть информация о КОНТАКТАХ, но что-то пошло не так" 
+                   TextColor="Purple"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand">
+            </Label>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
