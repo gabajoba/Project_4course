@@ -16,8 +16,8 @@
     <Shell.SearchHandler>
         <controls:DishSearchHandler Placeholder="Enter search term"
                                       ShowsResults="true"
-                                      ItemTemplate="{StaticResource DishSearchTemplate}"
-                                      Dishes="{x:Static data:PizzaData.Pizzas}"
+                                      ItemTemplate="{StaticResource DishSearchTemplate}"     
+                                      Dishes="{x:Static data:AllDishesData.AllDishes}"
                                       SelectedItemNavigationTarget="{x:Type views:PizzaDetailPage}" />
     </Shell.SearchHandler>
     <CollectionView x:Name="_test1"         
