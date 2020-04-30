@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="App2.Views.PizzaDetailPage"
              Title="Pizza Details">
-
+   
     <ScrollView>
         <StackLayout Margin="20">
             <Label Text="{Binding Name}" 

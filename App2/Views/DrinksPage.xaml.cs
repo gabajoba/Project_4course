@@ -15,12 +15,12 @@ namespace App2.Views
     {
         public DrinksPage()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string drinkName = (e.CurrentSelection.FirstOrDefault() as Dish).Name;
-            // This works because route names are unique in this application.
+            // This works because route names are unique in this application.            
             await Shell.Current.GoToAsync($"drinksdetails?name={drinkName}");
             // The full route is shown below.
             // await Shell.Current.GoToAsync($"//animals/domestic/cats/catdetails?name={drinkName}");

@@ -131,9 +131,9 @@
                           Title="Пицца"
                           Icon="pizzaicon.png"
                           ContentTemplate="{DataTemplate views:PizzaPage}" />
-            <ShellContent Route="Напитки"
+            <ShellContent Route="drinks"
                           Style="{StaticResource MenuShell}"
-                          Title="Drinks"
+                          Title="Напитки"
                           Icon="drinkicon.png"
                           ContentTemplate="{DataTemplate views:DrinksPage}" />
         </Tab>
