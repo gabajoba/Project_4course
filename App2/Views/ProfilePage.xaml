@@ -6,10 +6,14 @@
              mc:Ignorable="d"
              x:Class="App2.Views.ProfilePage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#ffc24a" >
-            <Label Text="Welcome to ProfilePage!" FontSize="20" TextColor="Blue"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="White" >
+
+            <Label Text="Здесь должна была быть страница ПРОФИЛЯ, но что-то пошло не так"
+                   TextColor="Blue"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand">
+            </Label>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
