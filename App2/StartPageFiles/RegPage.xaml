@@ -9,7 +9,8 @@
 
     <NavigationPage.TitleView>
         <Grid >
-            <Label Text="Регистрация"
+            <Label x:Name="_test1"
+                   Text="Регистрация"
                    HorizontalOptions="Start"
                   VerticalOptions="CenterAndExpand"
                    FontAttributes="Bold"

@@ -1,36 +1,78 @@
-﻿using System;
+﻿using App2.Data;
+using App2.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 
 namespace App2
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AppShell : Shell
     {
+        Random rand = new Random();
+
+        public Dictionary<string, Type> Routes { get; } = new Dictionary<string, Type>();
+
+        public ICommand HelpCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
+        public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync());
+
         public AppShell()
         {
             InitializeComponent();
+            RegisterRoutes();
+            BindingContext = this;
         }
-        //white
-        // testing github features
-        //testing github features 2
 
-        //protected override bool OnBackButtonPressed()
-        //{
-        //    var page = new StartPageFiles.StartPage();
+        void RegisterRoutes()
+        {
+            Routes.Add("pizzadetails", typeof(PizzaDetailPage));
+            Routes.Add("drinksdetails", typeof(DrinksDetailPage));
+           
 
-        //    (Application.Current.MainPage) = page;
-        //    return true;
-        //    //return base.OnBackButtonPressed();
-        //}
+            foreach (var item in Routes)
+            {
+                Routing.RegisterRoute(item.Key, item.Value);
+            }
+        }
 
+        async Task NavigateToRandomPageAsync()
+        {
+            string destinationRoute = Routes.ElementAt(rand.Next(0, Routes.Count)).Key;
+            string dishName = null;
 
+            switch (destinationRoute)
+            {
+                case "pizzadetails":
+                    dishName = PizzaData.Pizzas.ElementAt(rand.Next(0, PizzaData.Pizzas.Count)).Name;
+                    break;
+                case "drinksdetails":
+                    dishName = DrinksData.Drinks.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;
+                    break;
+                
+            }
 
+            ShellNavigationState state = Shell.Current.CurrentState;
+            await Shell.Current.GoToAsync($"{state.Location}/{destinationRoute}?name={dishName}");
+            Shell.Current.FlyoutIsPresented = false;
+        }
 
+        void OnNavigating(object sender, ShellNavigatingEventArgs e)
+        {
+            // Cancel any back navigation
+            //if (e.Source == ShellNavigationSource.Pop)
+            //{
+            //    e.Cancel();
+            //}
+        }
+
+        void OnNavigated(object sender, ShellNavigatedEventArgs e)
+        {
+        }
     }
 }

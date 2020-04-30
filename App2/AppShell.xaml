@@ -17,13 +17,9 @@
        
              FlyoutBehavior="Disabled"
              FlyoutHeaderBehavior="CollapseOnScroll">
-    <!--Navigating="OnNavigating"
-             Navigated="OnNavigated">-->
-             <!--DisabledColor="#B4FFFFFF"
-             UnselectedColor="#95FFFFFF"-->
-    
-    
-    <!--<Shell.Resources>
+    <!-- Static Resources -->
+    <Shell.Resources>
+        
         <Style x:Key="BaseStyle"
                TargetType="Element">
             <Setter Property="Shell.BackgroundColor"
@@ -37,61 +33,144 @@
             <Setter Property="Shell.UnselectedColor"
                     Value="#95FFFFFF" />
         </Style>
+        
         <Style TargetType="ShellItem"
                BasedOn="{StaticResource BaseStyle}" />
-        <Style x:Key="DomesticShell"
+        
+        <Style x:Key="MenuShell"
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
-                    Value="#039BE6" />
+                    Value="#ffa500" />
         </Style>
-        <Style x:Key="MonkeysShell"
+        
+        <Style x:Key="ProfileShell"
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
-                    Value="#689F39" />
+                    Value="#ff8c00" />
         </Style>
-        <Style x:Key="ElephantsShell"
+        
+        <Style x:Key="ContactsShell"
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
-                    Value="#ED3B3B" />
+                    Value="#ff5a00" />
         </Style>
-        <Style x:Key="BearsShell"
+        
+        <Style x:Key="CartShell"
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
-                    Value="#546DFE" />
+                    Value="#ff4500" />
         </Style>
+        
         <Style x:Key="AboutShell"
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
                     Value="#96d1ff" />
         </Style>
-    </Shell.Resources>-->
-    
-    
+        
+        
+    </Shell.Resources>
 
-
+    <!-- Header -->
     <Shell.FlyoutHeader>
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
-    <FlyoutItem>
-        <Tab Title="Menu" Icon="menu1.ico">
-            <ShellContent ContentTemplate="{DataTemplate views:MenuPage}"/>
-        </Tab>
-        <Tab Title="Profile" Icon="profile.ico">
-            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}"/>
-        </Tab>
-        <Tab Title="Contacts" Icon="contacts.ico">
-            <ShellContent ContentTemplate="{DataTemplate views:ContactsPage}"/>
-        </Tab>
-        <Tab Title="Cart" Icon="cart.ico">
-            <ShellContent ContentTemplate="{DataTemplate views:CartPage}"/>
+    
+    <!-- Template each flyout item-->
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    
+    <!-- Template each MenuItem -->
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    
+    <!-- Flyout items -->
+    <FlyoutItem Route="flyout"
+                Title="Flyout"
+                FlyoutDisplayOptions="AsMultipleItems">
 
+        <Tab Title="Меню"
+             Route="menu"
+             Icon="menu1.ico">
+            <ShellContent Route="pizza"
+                          Style="{StaticResource MenuShell}"
+                          Title="Пицца"
+                          Icon="pizzaicon.png"
+                          ContentTemplate="{DataTemplate views:PizzaPage}" />
+            <ShellContent Route="Напитки"
+                          Style="{StaticResource MenuShell}"
+                          Title="Drinks"
+                          Icon="drinkicon.png"
+                          ContentTemplate="{DataTemplate views:DrinksPage}" />
         </Tab>
+
+        <!--
+        implicit conversion operators to simplify the visual hierarchy.    
+        -->
+        <ShellContent Route="profile"
+                      Style="{StaticResource ProfileShell}"
+                      Title="Профиль"
+                      Icon="profile.ico"
+                      ContentTemplate="{DataTemplate views:ProfilePage}" />
+        <ShellContent Route="contacts"
+                      Style="{StaticResource ContactsShell}"
+                      Title="Контакты"
+                      Icon="contacts.ico"
+                      ContentTemplate="{DataTemplate views:ContactsPage}" />
+        <ShellContent Route="cart"
+                      Style="{StaticResource CartShell}"
+                      Title="Корзина"
+                      Icon="cart.ico"
+                      ContentTemplate="{DataTemplate views:CartPage}" />
     </FlyoutItem>
+    
 
+    <!--<ShellContent Route="about"
+                  Style="{StaticResource AboutShell}"
+                  Title="About"
+                  Icon="info.png"
+                  ContentTemplate="{DataTemplate views:AboutPage}" />-->
+
+    <MenuItem Text="Случайная позиция"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Помощь"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://gabajoba.ru/" />
 
 </Shell>
