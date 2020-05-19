@@ -24,8 +24,7 @@
         </Grid>
     </NavigationPage.TitleView>
     
-    <ContentPage.Content
-       >
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="15" Padding="0">
                 <!-- Имя -->
@@ -61,7 +60,7 @@
                            VerticalOptions="Center" 
                            FontAttributes="Bold" />
                     <Entry x:Name="_phone"
-                           Text="{Binding Phone}"
+                           Text=""
                            Keyboard="Telephone"
                            Placeholder="Введите номер телефона(начиная с 7)"
                            TextColor="Black"

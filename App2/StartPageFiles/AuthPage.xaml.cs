@@ -26,6 +26,10 @@ namespace App2.StartPageFiles
             //return base.OnBackButtonPressed();
         }
 
-
+        private void authButton_Clicked(object sender, EventArgs e)
+        {
+            //проверки
+            DisplayAlert("", "Всё норм", "OK");
+        }
     }
 }

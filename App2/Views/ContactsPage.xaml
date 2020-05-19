@@ -8,12 +8,23 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
 
-            <Label Text="Здесь должна была быть информация о КОНТАКТАХ, но что-то пошло не так" 
-                   TextColor="Purple"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand">
+            <Label FontSize="Large" LineBreakMode="WordWrap">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait" />
+                        <Span Text="here"
+                            TextColor="Blue"
+                            TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://vk.com/gabajoba/" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text=" to view HELP." />
+                    </FormattedString>
+                </Label.FormattedText>
             </Label>
-            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

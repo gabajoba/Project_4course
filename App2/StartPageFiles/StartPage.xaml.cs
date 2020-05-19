@@ -15,8 +15,6 @@ namespace App2.StartPageFiles
         public StartPage()
         {
             InitializeComponent();
-           // Title = "TESTING";
-            
         }
         
         private async void RegButton_Clicked(object sender, EventArgs e)
@@ -33,8 +31,8 @@ namespace App2.StartPageFiles
             // await Navigation.PushAsync(new AppShell());
             // var page = new NavigationPage(new AppShell());
             var page = new AppShell();
-                 
-             (Application.Current.MainPage) = page;
+            //DisplayAlert("Внимание", "Для оформления заказов потребуется войти в аккаунт", "OK");
+            (Application.Current.MainPage) = page;
         }
     }
 }
