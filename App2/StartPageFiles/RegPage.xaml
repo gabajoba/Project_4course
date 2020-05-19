@@ -24,8 +24,7 @@
         </Grid>
     </NavigationPage.TitleView>
     
-    <ContentPage.Content
-       >
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="15" Padding="0">
                 <!-- Имя -->

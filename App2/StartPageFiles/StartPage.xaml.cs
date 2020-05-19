@@ -31,7 +31,7 @@ namespace App2.StartPageFiles
             // await Navigation.PushAsync(new AppShell());
             // var page = new NavigationPage(new AppShell());
             var page = new AppShell();
-            DisplayAlert("Внимание", "Для оформления заказов потребуется войти в аккаунт", "OK");
+            //DisplayAlert("Внимание", "Для оформления заказов потребуется войти в аккаунт", "OK");
             (Application.Current.MainPage) = page;
         }
     }
