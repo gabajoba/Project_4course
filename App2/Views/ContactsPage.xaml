@@ -8,22 +8,150 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
 
-            <Label FontSize="Large" LineBreakMode="WordWrap">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait KEKW KEKWait" />
-                        <Span Text="here"
-                            TextColor="Blue"
+
+            <Grid Padding="15,5,15,15" RowSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="0.75*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" 
+                           Grid.Row="0"
+                           Grid.Column="0"
+                       Source="https://cdn.icon-icons.com/icons2/789/PNG/128/telephone_icon-icons.com_65394.png" 
+                       Aspect="AspectFit"/>
+                <Label 
+                       Grid.Column="1" 
+                       Grid.Row="0"
+                       Text="8-888-888-88-88" 
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="End"
+                           TextColor="Orange"/>
+                <Label Grid.Row="1"
+                       Grid.Column="1" 
+                       Text="Закажите по телефону"
+                       TextColor="Gray"
+                       FontAttributes="Italic"                       
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"/>
+
+
+                <Image Grid.RowSpan="2" 
+                           Grid.Row="2"
+                           Grid.Column="0"
+                       Source="https://cdn.icon-icons.com/icons2/1510/PNG/128/newemailenvelopebacksymbolincircularoutlinedbutton_104687.png" 
+                       Aspect="Fill"/>
+                <Label 
+                       Grid.Column="1" 
+                       Grid.Row="2"
+                       Text="admin@gabajoba.ru" 
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="End"
+                       TextColor="Orange"/>
+                <Label 
+                       Grid.Row="3"
+                       Grid.Column="1" 
+                       Text="Вопросы, отзывы и предложения"
+                       TextColor="Gray"
+                       FontAttributes="Italic"                       
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"/>
+                
+            </Grid>
+
+
+
+            <Grid Padding="15,5,15,15" RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="0.25*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.ColumnSpan="4" 
+                       Grid.Row="0" Text="Елдоед в соцсетях:" FontSize="Large" TextColor="Orange" HorizontalOptions="Center"/>
+                <Image  x:Name="vk"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                       Source="https://icon-icons.com/icons2/936/PNG/512/vk-social-network-logo_icon-icons.com_73339.png" 
+                       Aspect="AspectFit"
+                       VerticalOptions="Center" HorizontalOptions="Center">
+                    
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="OnTapGestureRecognizerTapped"
+                        NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image  x:Name="instagram"
+                               Grid.Row="1"
+                               Grid.Column="1"
+                           Source="https://cdn.icon-icons.com/icons2/726/PNG/512/instagram_f_icon-icons.com_62685.png" 
+                           Aspect="AspectFit"
+                           VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="OnTapGestureRecognizerTapped"
+                        NumberOfTapsRequired="1" /> 
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image  x:Name="youtube"
+                               Grid.Row="1"
+                               Grid.Column="2"
+                           Source="https://cdn.icon-icons.com/icons2/693/PNG/512/Youtube_Rounded_Solid_icon-icons.com_61558.png" 
+                           Aspect="AspectFit"
+                           VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="OnTapGestureRecognizerTapped"
+                NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image  x:Name="twitter"
+                               Grid.Row="1"
+                               Grid.Column="3"
+                           Source="https://cdn.icon-icons.com/icons2/512/PNG/512/twitter-3_icon-icons.com_50735.png" 
+                           Aspect="AspectFit"
+                           VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="OnTapGestureRecognizerTapped"
+                NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label  Grid.ColumnSpan="4" 
+                            Grid.Row="2" FontSize="Large" LineBreakMode="WordWrap" HorizontalOptions="Center" VerticalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Наш " TextColor="Orange" FontSize="Large"/>
+                            <Span Text="официальный сайт"
+                            TextColor="Blue" FontSize="Large"
                             TextDecorations="Underline">
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://vk.com/gabajoba/" />
-                            </Span.GestureRecognizers>
-                        </Span>
-                        <Span Text=" to view HELP." />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://www.gabajoba.ru/" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+
 
         </StackLayout>
     </ContentPage.Content>

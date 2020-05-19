@@ -7,7 +7,7 @@
              xmlns:controls="clr-namespace:App2.Controls"       
              mc:Ignorable="d"
              x:Class="App2.AppShell"
-       
+                
              BackgroundColor="#ff4400"
              FlyoutBackgroundColor="#ffac08"
        
@@ -15,12 +15,12 @@
              DisabledColor="Gray"
              UnselectedColor="Black"
        
-             FlyoutBehavior="Disabled"
+             FlyoutBehavior="Flyout"
              FlyoutHeaderBehavior="CollapseOnScroll">
     <!-- Static Resources -->
     <Shell.Resources>
         
-        <Style x:Key="BaseStyle"
+        <Style x:Key="BaseStyle"               
                TargetType="Element">
             <Setter Property="Shell.BackgroundColor"
                     Value="#455A64" />
@@ -45,7 +45,7 @@
         </Style>
         
         <Style x:Key="ProfileShell"
-               TargetType="Element"
+               TargetType="Element"           
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
                     Value="#ff8c00" />
@@ -154,11 +154,11 @@
         <ShellContent Route="cart"
                       Style="{StaticResource CartShell}"
                       Title="Корзина"
-                      Icon="cart.ico"
+                      Icon="cart.ico"     
                       ContentTemplate="{DataTemplate views:CartPage}" />
     </FlyoutItem>
     
-
+    
     <!--<ShellContent Route="about"
                   Style="{StaticResource AboutShell}"
                   Title="About"

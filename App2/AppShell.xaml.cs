@@ -3,6 +3,7 @@ using App2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -21,7 +22,7 @@ namespace App2
        
         public ICommand HelpCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
         public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync());
-
+        
         public AppShell()
         {
             InitializeComponent();
@@ -61,18 +62,17 @@ namespace App2
             await Shell.Current.GoToAsync($"{state.Location}/{destinationRoute}?name={dishName}");
             Shell.Current.FlyoutIsPresented = false;
         }
-
+        
         void OnNavigating(object sender, ShellNavigatingEventArgs e)
         {
-            // Cancel any back navigation
-            //if (e.Source == ShellNavigationSource.Pop)
-            //{
-            //    e.Cancel();
-            //}
+           
+        
         }
+        
 
         void OnNavigated(object sender, ShellNavigatedEventArgs e)
         {
-       }       
+            
+        }       
     }
 }
