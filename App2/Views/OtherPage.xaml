@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             
+             xmlns:controls="clr-namespace:App2.Controls"
+             xmlns:data="clr-namespace:App2.Data"
+             xmlns:views="clr-namespace:App2.Views"
+             
+             mc:Ignorable="d"
+             x:Class="App2.Views.OtherPage">
+
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                        Value="#039BE6" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Shell.SearchHandler>
+        <controls:DishSearchHandler Placeholder="Enter search term"
+                                      ShowsResults="true"
+                                      ItemTemplate="{StaticResource DishSearchTemplate}"
+                                      Dishes="{x:Static data:AllDishesData.AllDishes}"
+                                      SelectedItemNavigationTarget="{x:Type views:OtherDetailPage}" />
+    </Shell.SearchHandler>
+
+    <CollectionView Margin="20"
+                    ItemsSource="{x:Static data:OtherData.Other}"
+                    ItemTemplate="{StaticResource DishTemplate}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged"/>
+</ContentPage>

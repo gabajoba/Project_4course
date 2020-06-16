@@ -136,6 +136,16 @@
                           Title="Напитки"
                           Icon="drinkicon.png"
                           ContentTemplate="{DataTemplate views:DrinksPage}" />
+            <ShellContent Route="snack"
+                          Style="{StaticResource MenuShell}"
+                          Title="Закуски"
+                          Icon="snackicon.png"
+                          ContentTemplate="{DataTemplate views:SnacksPage}" />
+            <ShellContent Route="other"
+                          Style="{StaticResource MenuShell}"
+                          Title="Другое"
+                          Icon="othericon.png"
+                          ContentTemplate="{DataTemplate views:OtherPage}" />
         </Tab>
 
         <!--

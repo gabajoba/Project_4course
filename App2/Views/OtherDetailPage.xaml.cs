@@ -6,21 +6,21 @@ using Xamarin.Forms;
 namespace App2.Views
 {
     [QueryProperty("Name", "name")]
-    public partial class DrinksDetailPage : ContentPage
-    {        
+    public partial class OtherDetailPage : ContentPage
+    {
         public string Name
         {
             set
             {
-                BindingContext = DrinksData.Drinks.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
+                BindingContext = OtherData.Other.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
             }
         }
-        public DrinksDetailPage()
+        public OtherDetailPage()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
         protected override bool OnBackButtonPressed()
-        {            
+        {
             return base.OnBackButtonPressed();
         }
 

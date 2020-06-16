@@ -7,15 +7,15 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace App2.Data
 {
     
     public static class AllDishesData
     {
-        private static readonly string getURL = "https://api-eldoed.herokuapp.com/products";
+        private static readonly string getURL = "https://api-eldoed.herokuapp.com/products";       
         public static IList<Dish> AllDishes { get; private set; }
-        //public static IList<IList<Dish>> NeBidloCode { get; set; }
         static AllDishesData()        
         {
             AllDishes = new List<Dish>();
@@ -43,62 +43,47 @@ namespace App2.Data
 
                         foreach (JSONDishTemplate dish in dishesList.Data)
                         {
-                            AllDishes.Add(new Dish()
+                            Dish temp = new Dish()
                             {
-                                Name = dish.Name.ToString() + "test"
+                                Name = dish.Name.ToString()
                                 ,
-                                Price = dish.Price.ToString()
+                                Price = dish.Price.ToString() + " руб."
                                 ,
                                 Details = dish.Description.ToString()
                                 ,
-                                ImageUrl = dish.ImageData.ToString()
-                            }) ;
+                                //ImageUrl = dish.ImageData.ToString()
+                                ImageUrl = "https://2ch.hk/test/src/22583/14918417781080.png"
+                            };
+
+                            AllDishes.Add(temp);
                             switch (dish.Category.ToString())
                             {
+
                                 case "pizza": 
                                     {
-                                        PizzaData.Pizzas.Add(new Dish
-                                        {
-                                            Name = "Деревенская",
-                                            Price = "395 ₽",
-                                            Details = "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-                                            ImageUrl = "https://dodopizza-a.akamaihd.net/static/Img/Products/d7034033497d4703a35a2ee4185844b1_292x292.jpeg"
-                                        });
+                                        PizzaData.Pizzas.Add(temp);
+                                       
                                         break; 
                                     };
+
                                 case "snacks":
                                     {
-                                        PizzaData.Pizzas.Add(new Dish
-                                        {
-                                            Name = "Деревенская",
-                                            Price = "395 ₽",
-                                            Details = "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-                                            ImageUrl = "https://dodopizza-a.akamaihd.net/static/Img/Products/d7034033497d4703a35a2ee4185844b1_292x292.jpeg"
-                                        });
+                                        SnacksData.Snacks.Add(temp);
                                         break;
                                     };
+
                                 case "drinks":
                                     {
-                                        PizzaData.Pizzas.Add(new Dish
-                                        {
-                                            Name = "Деревенская",
-                                            Price = "395 ₽",
-                                            Details = "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-                                            ImageUrl = "https://dodopizza-a.akamaihd.net/static/Img/Products/d7034033497d4703a35a2ee4185844b1_292x292.jpeg"
-                                        });
+                                        DrinksData.Drinks.Add(temp);
                                         break;
                                     };
+
                                 case "other":
                                     {
-                                        PizzaData.Pizzas.Add(new Dish
-                                        {
-                                            Name = "Деревенская",
-                                            Price = "395 ₽",
-                                            Details = "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-                                            ImageUrl = "https://dodopizza-a.akamaihd.net/static/Img/Products/d7034033497d4703a35a2ee4185844b1_292x292.jpeg"
-                                        });
+                                        OtherData.Other.Add(temp);
                                         break;
                                     };
+
                                 default:
                                     {
 

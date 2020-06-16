@@ -3,24 +3,25 @@ using System;
 using System.Linq;
 using Xamarin.Forms;
 
+
 namespace App2.Views
 {
     [QueryProperty("Name", "name")]
-    public partial class DrinksDetailPage : ContentPage
-    {        
+    public partial class SnacksDetailPage : ContentPage
+    {
         public string Name
         {
             set
             {
-                BindingContext = DrinksData.Drinks.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
+                BindingContext = SnacksData.Snacks.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
             }
         }
-        public DrinksDetailPage()
+        public SnacksDetailPage()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
         protected override bool OnBackButtonPressed()
-        {            
+        {
             return base.OnBackButtonPressed();
         }
 

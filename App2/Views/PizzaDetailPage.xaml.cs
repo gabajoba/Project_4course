@@ -1,8 +1,8 @@
 ﻿using App2.Data;
 using System;
 using System.Linq;
-using System.Windows.Input;
 using Xamarin.Forms;
+
 
 namespace App2.Views
 {

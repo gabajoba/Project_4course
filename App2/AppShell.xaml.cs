@@ -34,8 +34,8 @@ namespace App2
         {
             Routes.Add("pizzadetails", typeof(PizzaDetailPage));
             Routes.Add("drinksdetails", typeof(DrinksDetailPage));
-           
-
+            Routes.Add("snacksdetails", typeof(SnacksDetailPage));
+            Routes.Add("otherdetails", typeof(OtherDetailPage));
             foreach (var item in Routes)
             {
                 Routing.RegisterRoute(item.Key, item.Value);
