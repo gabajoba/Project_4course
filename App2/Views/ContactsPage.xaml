@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:maps="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
              mc:Ignorable="d"
              x:Class="App2.Views.ContactsPage">
     <ContentPage.Content>
@@ -150,9 +150,11 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
+               
             </Grid>
 
 
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

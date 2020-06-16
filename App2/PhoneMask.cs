@@ -60,21 +60,7 @@ namespace App2
                             ((Entry)sender).Text += "-";
                             return;
                         }
-                    //case 2:
-                    //    {
-                    //        ((Entry)sender).Text.Remove(((Entry)sender).Text.Length - 1);
-                    //        return;
-                    //    }
-                    //case 6:
-                    //    {
-                    //        ((Entry)sender).Text.Remove(((Entry)sender).Text.Length - 1);
-                    //        return;
-                    //    }
-                    //case 10:
-                    //    {
-                    //        ((Entry)sender).Text.Remove(((Entry)sender).Text.Length - 1);
-                    //        return;
-                    //    }
+                   
                 }
 
 

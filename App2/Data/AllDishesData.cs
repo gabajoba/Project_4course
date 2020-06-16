@@ -8,7 +8,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
 namespace App2.Data
 {
     
@@ -51,19 +50,19 @@ namespace App2.Data
                                 ,
                                 Details = dish.Description.ToString()
                                 ,
-                                //ImageUrl = dish.ImageData.ToString()
-                                ImageUrl = "https://2ch.hk/test/src/22583/14918417781080.png"
+                                ImageUrl = "https://api-eldoed.herokuapp.com/" + (dish.ImageData.ToString().Replace(@"server\", "")).Replace(@"\", "/")
+
                             };
 
                             AllDishes.Add(temp);
                             switch (dish.Category.ToString())
                             {
 
-                                case "pizza": 
+                                case "pizza":
                                     {
                                         PizzaData.Pizzas.Add(temp);
-                                       
-                                        break; 
+
+                                        break;
                                     };
 
                                 case "snacks":
@@ -92,7 +91,6 @@ namespace App2.Data
 
                             }
                         }
-                        
                     }
                 }
             }

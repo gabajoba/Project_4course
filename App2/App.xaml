@@ -52,6 +52,50 @@
                        FontAttributes="Bold" />
             </Grid>
         </DataTemplate>
+        
+        <DataTemplate x:Key="CartTemplate">
+            <Grid Padding="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.45*" />
+                    <ColumnDefinition Width="0.55*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" 
+                       Grid.Row="0"
+                       Source="{Binding ImageUrl}" 
+                       Aspect="AspectFill"
+                       HeightRequest="140" 
+                       WidthRequest="140" />
+
+                <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="{Binding Name}" 
+                       FontAttributes="Bold"
+                       
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="End"/>
+
+                <Label Grid.Row="0"
+                       Grid.Column="1" 
+                       Text="{Binding Price}"
+                       FontAttributes="Italic"                       
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"/>
+                
+                <Stepper Grid.Row="1"
+                         Grid.Column="1"
+                         Minimum="0"
+                         Maximum="10"
+                         Increment="1"
+                         Value="{Binding Quantity}"
+                         HorizontalOptions="Center"
+                         VerticalOptions="CenterAndExpand" />
+            </Grid>
+        </DataTemplate>
     
     </Application.Resources>
 </Application>

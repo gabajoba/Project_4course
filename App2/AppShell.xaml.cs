@@ -32,10 +32,10 @@ namespace App2
 
         void RegisterRoutes()
         {
-            Routes.Add("pizzadetails", typeof(PizzaDetailPage));
-            Routes.Add("drinksdetails", typeof(DrinksDetailPage));
-            Routes.Add("snacksdetails", typeof(SnacksDetailPage));
-            Routes.Add("otherdetails", typeof(OtherDetailPage));
+            Routes.Add("pizzadetails", typeof(DishDetailPage));
+            Routes.Add("drinksdetails", typeof(DishDetailPage));
+            Routes.Add("snacksdetails", typeof(DishDetailPage));
+            Routes.Add("otherdetails", typeof(DishDetailPage));
             foreach (var item in Routes)
             {
                 Routing.RegisterRoute(item.Key, item.Value);
@@ -55,7 +55,13 @@ namespace App2
                 case "drinksdetails":
                     dishName = DrinksData.Drinks.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;
                     break;
-                
+                case "snacksdetails":
+                    dishName = SnacksData.Snacks.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;
+                    break;
+                //case "otherdetails":
+                //    dishName = OtherData.Other.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;
+                //    break;
+
             }
 
             ShellNavigationState state = Shell.Current.CurrentState;

@@ -14,11 +14,11 @@
 
 
     <Shell.SearchHandler>
-        <controls:DishSearchHandler Placeholder="Enter search term"
+        <controls:DishSearchHandler Placeholder="Поиск"
                                       ShowsResults="true"
                                       ItemTemplate="{StaticResource DishSearchTemplate}"     
                                       Dishes="{x:Static data:AllDishesData.AllDishes}"
-                                      SelectedItemNavigationTarget="{x:Type views:PizzaDetailPage}" />
+                                      SelectedItemNavigationTarget="{x:Type views:DishDetailPage}" />
     </Shell.SearchHandler>
     <CollectionView x:Name="_test1"         
                     Margin="20"

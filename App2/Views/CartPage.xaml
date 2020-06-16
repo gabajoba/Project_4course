@@ -4,16 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2.Views.CartPage">
-    <ContentPage.Content>
-        <StackLayout BackgroundColor="White">
+             x:Class="App2.Views.CartPage"
+             xmlns:controls="clr-namespace:App2.Controls"
+             xmlns:data="clr-namespace:App2.Data"
+             xmlns:views="clr-namespace:App2.Views"
+             >
+    <StackLayout>
+        <Label Text="{Binding Test}"
+               TextColor="Red"
+               FontSize="Large"/>
+        <Label Text="123"
+               TextColor="Red"
+               FontSize="Large"/>
 
-            <Label Text="Здесь должна была быть КОРЗИНА, но что-то пошло не так"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"
-                   TextColor="Black">
-            </Label>
-
-        </StackLayout>
-    </ContentPage.Content>
+                    <!--<CollectionView x:Name="_test1"         
+                    Margin="20"
+                    ItemsSource="{x:Static data:Cart.CartList}"
+                    ItemTemplate="{StaticResource CartTemplate}"
+                    SelectionMode="None"              
+                    />-->
+    </StackLayout>
 </ContentPage>
