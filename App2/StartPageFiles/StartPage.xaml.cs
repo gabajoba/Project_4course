@@ -27,11 +27,8 @@ namespace App2.StartPageFiles
         }
 
         private  void SkipButton_Clicked(object sender, EventArgs e)
-        {
-            // await Navigation.PushAsync(new AppShell());
-            // var page = new NavigationPage(new AppShell());
-            var page = new AppShell();
-            //DisplayAlert("Внимание", "Для оформления заказов потребуется войти в аккаунт", "OK");
+        {           
+            var page = new AppShell();           
             (Application.Current.MainPage) = page;
         }
     }

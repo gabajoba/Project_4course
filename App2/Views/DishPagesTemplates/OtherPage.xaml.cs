@@ -19,11 +19,24 @@ namespace App2.Views
         }
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string otherName = (e.CurrentSelection.FirstOrDefault() as Dish).Name;
-            // This works because route names are unique in this application.            
-            await Shell.Current.GoToAsync($"otherdetails?name={otherName}");
-            // The full route is shown below.
-            // await Shell.Current.GoToAsync($"//animals/domestic/cats/catdetails?name={drinkName}");
+            var collection = sender as CollectionView;
+            if (collection.SelectedItem == null)
+            {
+                return;
+            }
+            else
+            {
+                string otherName = (e.CurrentSelection.FirstOrDefault() as Dish).Name;
+                // This works because route names are unique in this application.            
+                await Shell.Current.GoToAsync($"otherdetails?name={otherName}");
+                // The full route is shown below.
+                // await Shell.Current.GoToAsync($"//animals/domestic/cats/catdetails?name={drinkName}");
+
+
+
+                collection.SelectedItem = null;
+            }
+            
         }
     }
 }

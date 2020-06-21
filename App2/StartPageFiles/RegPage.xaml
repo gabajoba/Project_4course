@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:behavior="clr-namespace:App2" 
              mc:Ignorable="d"
-             x:Class="App2.StartPageFiles.RegPage">
+             x:Class="App2.StartPageFiles.RegPage"
+             Title="Регистрация">
 
     <NavigationPage.TitleView>
         <Grid >

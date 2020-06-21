@@ -4,16 +4,34 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2.Views.ProfilePage">
+             x:Class="App2.Views.ProfilePage"
+             Title="Профиль">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="White" >
-
-            <Label Text="Здесь должна была быть страница ПРОФИЛЯ, но что-то пошло не так"
-                   TextColor="Blue"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand">
-            </Label>
-            
+        <StackLayout Padding="12,12,12,12" >
+            <!-- Войти -->
+            <Button x:Name="authButton" 
+                    Text="Войти" 
+                    TextColor="White"
+                    FontSize="20"
+                    BackgroundColor="#DC2907" 
+                    FontAttributes="Bold" 
+                    Clicked="AuthButton_Clicked"
+                    Margin="0,150,0,5"  
+                    HorizontalOptions="Center" 
+                    HeightRequest="100" 
+                    WidthRequest="300"/>
+            <!-- Регистрация -->
+            <Button x:Name="regButton" 
+                    Text="Регистрация" 
+                    TextColor="White"
+                    FontSize="20"
+                    BackgroundColor="#FF6900" 
+                    FontAttributes="Bold" 
+                    Clicked="RegButton_Clicked"                    
+                    Margin="0,5"                   
+                    HorizontalOptions="Center" 
+                    HeightRequest="100"
+                    WidthRequest="300"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

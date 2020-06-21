@@ -8,11 +8,17 @@ namespace App2.Views
     [QueryProperty("Name", "name")]
     public partial class DishDetailPage : ContentPage
     {
+       public Dish _dish;
         public string Name
         {
             set
             {
                 BindingContext = AllDishesData.AllDishes.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
+                _dish = AllDishesData.AllDishes.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
+            }
+            get
+            {
+                return this.Name;
             }
         }
         public DishDetailPage()
@@ -26,8 +32,20 @@ namespace App2.Views
 
         private void orderButton_Clicked(object sender, EventArgs e)
         {
-            Cart.CartList.Add(new Tuple<Dish, int>(new Dish() { Name = "test", Details = "test", ImageUrl = "test", Price = "test" }, 2));
-            base.OnBackButtonPressed();
+            
+            var tempDish = Cart.CartList.FirstOrDefault(m => m.Name == _dish.Name);
+            if (tempDish == null){
+                var dish = new DishInCart() { Name = _dish.Name, ImageUrl = _dish.ImageUrl, Price = _dish.Price, Quantity = 1 };
+                Cart.CartList.Add(dish);
+                DisplayAlert("Выполнено","В вашу корзину добавлен товар:" + _dish.Name, "ОК");
+            }
+            else
+            {
+                tempDish.Quantity = tempDish.Quantity + 1;
+            }
+            
+            
+            Application.Current.MainPage.Navigation.PopAsync();
         }
     }
 }

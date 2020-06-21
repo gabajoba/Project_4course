@@ -59,21 +59,6 @@
                     Clicked="SkipButton_Clicked" 
                     Margin="0,5" 
                     HorizontalOptions="Center"/>
-            
-            <!--<Label HorizontalOptions="Center">
-                <Label.FormattedText>
-                    <FormattedString >
-                        <Span Text="Пропустить"
-                            TextColor="Black"
-                            TextDecorations="Underline">
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://docs.microsoft.com/xamarin/" />
-                            </Span.GestureRecognizers>
-                        </Span>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

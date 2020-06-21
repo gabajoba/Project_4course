@@ -23,7 +23,7 @@ namespace App2.Views
             {
                 string pizzaName = (e.CurrentSelection.FirstOrDefault() as Dish).Name;
                 await Shell.Current.GoToAsync($"pizzadetails?name={pizzaName}");
-
+                
 
 
                 collection.SelectedItem = null;

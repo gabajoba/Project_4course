@@ -1,4 +1,5 @@
 ﻿using App2.Data;
+using App2.StartPageFiles;
 using App2.Views;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,9 @@ namespace App2
             Routes.Add("drinksdetails", typeof(DishDetailPage));
             Routes.Add("snacksdetails", typeof(DishDetailPage));
             Routes.Add("otherdetails", typeof(DishDetailPage));
+            
+            Routes.Add("regdetails", typeof(RegPage));
+            Routes.Add("authdetails", typeof(AuthPage));
             foreach (var item in Routes)
             {
                 Routing.RegisterRoute(item.Key, item.Value);
@@ -56,7 +60,7 @@ namespace App2
                     dishName = DrinksData.Drinks.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;
                     break;
                 case "snacksdetails":
-                    dishName = SnacksData.Snacks.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;
+                    dishName = SnacksData.Snacks.ElementAt(rand.Next(0, SnacksData.Snacks.Count)).Name;
                     break;
                 //case "otherdetails":
                 //    dishName = OtherData.Other.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;

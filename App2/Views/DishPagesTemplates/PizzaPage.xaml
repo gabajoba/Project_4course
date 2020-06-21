@@ -20,6 +20,7 @@
                                       Dishes="{x:Static data:AllDishesData.AllDishes}"
                                       SelectedItemNavigationTarget="{x:Type views:DishDetailPage}" />
     </Shell.SearchHandler>
+    
     <CollectionView x:Name="_test1"         
                     Margin="20"
                     ItemsSource="{x:Static data:PizzaData.Pizzas}"

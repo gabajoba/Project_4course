@@ -25,7 +25,7 @@
                    Style="{DynamicResource BodyStyle}" 
                    FontSize="Medium"/>
             <Button x:Name="orderButton" 
-                    Text="Заказать" 
+                    Text="В корзину" 
                     TextColor="White" 
                     BackgroundColor="#DC2907" 
                     FontAttributes="Bold" 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App2.StartPageFiles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,15 @@ namespace App2.Views
     {
         public ProfilePage()
         {
-            InitializeComponent();
+            InitializeComponent();        
+        }
+        private async void RegButton_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"regdetails");           
+        }
+        private async void AuthButton_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"authdetails");            
         }
     }
 }

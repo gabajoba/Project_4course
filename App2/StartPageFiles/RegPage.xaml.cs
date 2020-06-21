@@ -18,13 +18,15 @@ namespace App2.StartPageFiles
            
             InitializeComponent();
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#ff8256");
-            ((NavigationPage)Application.Current.MainPage).Title = "Регистрация";
+            //((NavigationPage)Application.Current.MainPage).Title = "Регистрация";
         }
 
         protected override bool OnBackButtonPressed()
-        {          
-            Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1]);
+        {
+            //Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1]);
+            Application.Current.MainPage.Navigation.PopAsync();
             return false;
+
             //return base.OnBackButtonPressed();
         }
 
