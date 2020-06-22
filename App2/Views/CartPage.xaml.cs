@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using App2.Data;
 using App2.Models;
@@ -16,62 +17,57 @@ namespace App2.Views
     public partial class CartPage : ContentPage
     {
         
+        public void ShowOrderGrid()
+        {
+            if (Cart.CartList.Count <= 0)
+            {
+                this._orderGrid.IsVisible = false;
+            } else
+            {
+                this._orderGrid.IsVisible = true;
+            }
+        }
         public CartPage()
         {   
             InitializeComponent();
-            foreach(DishInCart _dish in Cart.CartList)
-            {
-                if(_dish.Quantity == 0)
-                {
-                    Cart.CartList.Remove(Cart.CartList.First(x=>x.Quantity == 0));
-                }
-            }
-
-
-            if (Cart.CartList.Count == 0)
-            {
-                new Label()
-                {
-                    Text = "Корзина пуста",
-                    FontSize = 20,
-                    TextColor = Color.Orange
-
-                };
-            }
-            else
-            {
-                new Label()
-                {
-                    Text = "test",
-                    FontSize = 20,
-                    TextColor = Color.Orange
-
-                };
-            }
-
-
-            var cart = new Cart();
-            BindingContext = cart;
+            ShowOrderGrid();
             
+
         }
 
         private void Stepper1_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            foreach (DishInCart _dish in Cart.CartList)
-            {
-                if (_dish.Quantity == 0)
-                {
-                    //((sender as Stepper).Parent.FindByName("_priceLabel") as Label).Text = "123";
-                    //DisplayAlert("kek", _test1.FindByName(_dish.Name).ToString(), "OK");
-                    
-                    Cart.CartList.Remove(Cart.CartList.First(x => x.Quantity == 0));
-                    break;
-                }
+            var button = sender as Stepper;
+            var product = button?.BindingContext as DishInCart;
+            Cart.RefreshCartTotal();
+            if (button.Value <= 0)
+            {               
+                var vm = BindingContext as Cart;
+                vm?.RemoveCommand.Execute(product);
             }
-            
-
+            else
+            {
+                var pattern = "^[0-9]+\\,*[0-9]+";
+                Regex regEx = new Regex(pattern);
+                var _price = regEx.Match((button.Parent.FindByName("_priceLabel") as Label).Text).ToString();            
+               (button.Parent.FindByName("_totalPrice") as Label).Text = (Double.Parse(_price)*button.Value).ToString() + " Руб.";
+               _totalOrderPrice.Text = "Сумма заказа:" + Cart.CartTotal + " Руб.";
+            }
+            ShowOrderGrid();
+              
         }
-
+        private void orderButton_Clicked(object sender, EventArgs e)
+        {
+            
+        }
+        private void removeButton_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var product = button?.BindingContext as DishInCart;
+            var vm = BindingContext as Cart;
+            vm?.RemoveCommand.Execute(product);
+            ShowOrderGrid();
+        }
     }
 
 }

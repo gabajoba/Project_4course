@@ -4,110 +4,165 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2.Views.CartPage"
-             xmlns:controls="clr-namespace:App2.Controls"
-             xmlns:data="clr-namespace:App2.Data"
-             xmlns:views="clr-namespace:App2.Views"
+             xmlns:local="clr-namespace:App2.Data"
+             x:Class="App2.Views.CartPage"             
+             x:Name="_CartPage"
              >
     
-    
-    <ContentPage.Resources>
-        <DataTemplate x:Key="CartTemplate">
-            <Grid Padding="15">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="45" />
-                    <RowDefinition Height="65" />
-                    <RowDefinition Height="40" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.35*" />
-                    <ColumnDefinition Width="0.30*" />
-                    <ColumnDefinition Width="0.35*" />
-                </Grid.ColumnDefinitions>
 
-                <Image Grid.Column="0" 
-                       Grid.Row="0"
-                       Grid.RowSpan="2"
-                       Source="{Binding ImageUrl}" 
-                       Aspect="AspectFill"
-                       HeightRequest="140" 
-                       WidthRequest="140" />
-
-                <Label Grid.Column="0"
-                       Grid.Row="2"
-                       Text="{Binding Name}" 
-                       FontAttributes="Bold"
-                       LineBreakMode="WordWrap"
-                       HorizontalTextAlignment="Center"
-                       VerticalOptions="End"/>
-
-                <Label x:Name="_priceLabel"
-                       Grid.Row="0"
-                       Margin="1"
-                       Grid.Column="1" 
-                       Text="{Binding Price}"
-                       FontSize="Medium"
-                       FontAttributes="Italic"                       
-                       VerticalOptions="Start"
-                       HorizontalOptions="End"/>
-                <Label 
-                    Margin="1"
-                       Grid.Row="0"
-                       Grid.Column="1" 
-                       Text="Количество:"
-                       
-                       FontAttributes="Italic"                       
-                       VerticalOptions="End"
-                       HorizontalOptions="End"/>
-                <Label 
-                    Margin="1"
-                       Grid.Row="0"
-                       Grid.Column="2" 
-                       Text="{Binding Source={x:Reference Stepper1},Path=Value,Mode=TwoWay}"
-                       FontAttributes="Italic"                       
-                       VerticalOptions="End"
-                       
-                       HorizontalOptions="Start"/>
-                <Stepper x:Name="Stepper1"
-                         
-                         Grid.ColumnSpan="2"
-                         Grid.Column="1"
-                         Grid.Row="1"
-                         Margin="1"
-                         Minimum="0"
-                         Maximum="1000"
-                         Increment="1"
-                         Value="{Binding Quantity}"
-                         HorizontalOptions="CenterAndExpand"
-                         ValueChanged="Stepper1_ValueChanged"
-                         VerticalOptions="StartAndExpand"></Stepper>
-                <Label
-                       Grid.Row="2"
-                       Grid.Column="1"                      
-                       Text="Итого:"
-                       FontAttributes="Italic"                       
-                       VerticalOptions="Center"
-                       FontSize="Medium"
-                       HorizontalOptions="End"/>
-                <Label x:Name="_totalPrice"
-                       Grid.Row="2"
-                       Grid.Column="2"                      
-                       Text="{Binding Price}"
-                       FontAttributes="Bold"                       
-                       VerticalOptions="Center"
-                       FontSize="Medium"
-                       HorizontalOptions="Start"/>
-            </Grid>
-        </DataTemplate>
-    </ContentPage.Resources>
-
-
+    <ContentPage.BindingContext>
+        <local:Cart></local:Cart>
+    </ContentPage.BindingContext>
     <StackLayout>
-        <CollectionView x:Name="_test1"         
-                    Margin="20"
-                    ItemsSource="{x:Static data:Cart.CartList}"
-                    ItemTemplate="{StaticResource CartTemplate}"
-                    SelectionMode="None"              
-                    />
+        
+        <StackLayout>
+
+            <ListView x:Name="_test1"         
+                    Margin="0" 
+                    SelectionMode="None"
+                  HasUnevenRows="True"
+                    ItemsSource="{x:Static local:Cart.CartList}">
+                <ListView.ItemTemplate
+                >
+                    <DataTemplate
+                    >
+                        <ViewCell
+                        >
+                            <StackLayout >
+                                <Grid Padding="15">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="45" />
+                                        <RowDefinition Height="65" />
+                                        <RowDefinition Height="40" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.35*" />
+                                        <ColumnDefinition Width="0.30*" />
+                                        <ColumnDefinition Width="0.35*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" 
+                                   Grid.Row="0"
+                                   Grid.RowSpan="2"
+                                   Source="{Binding ImageUrl}" 
+                                   Aspect="AspectFill"
+                                   HeightRequest="140" 
+                                   WidthRequest="140" />
+
+                                    <Label Grid.Column="0"
+                                   Grid.Row="2"
+                                   Text="{Binding Name}" 
+                                   FontAttributes="Bold"
+                                   LineBreakMode="WordWrap"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalOptions="End"/>
+
+                                    <Button x:Name="_removeButton"
+                                   Text="X" 
+                                   Clicked="removeButton_Clicked" 
+                                   Grid.Row="0"
+                                   Grid.Column="2"
+                                   WidthRequest="35"
+                                   TextColor="White"
+                                   HeightRequest="35"
+                                   FontSize="Small"
+                                   BackgroundColor="#DC2907" 
+                                   
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="End"/>
+                                    <Label x:Name="_priceLabel"
+                                   Grid.Row="0"
+                                   Margin="1"
+                                   Grid.Column="1" 
+                                   Text="{Binding Price}"
+                                   FontSize="Medium"
+                                   FontAttributes="Italic"                       
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="End"/>
+                                    <Label 
+                                   Margin="1"
+                                   Grid.Row="0"
+                                   Grid.Column="1" 
+                                   Text="Количество:"
+                       
+                                   FontAttributes="Italic"                       
+                                   VerticalOptions="End"
+                                   HorizontalOptions="End"/>
+                                    <Label 
+                                   Margin="1"
+                                   Grid.Row="0"
+                                   Grid.Column="2" 
+                                   Text="{Binding Source={x:Reference Stepper1},Path=Value,Mode=TwoWay}"
+                                   FontAttributes="Italic"                       
+                                   VerticalOptions="End"                      
+                                   HorizontalOptions="Start"/>
+                                    <Stepper x:Name="Stepper1"                        
+                                 Grid.ColumnSpan="2"
+                                 Grid.Column="1"
+                                 Grid.Row="1"
+                                 Margin="1"
+                                 Minimum="0"
+                                 Maximum="100"
+                                 Increment="1"
+                                 Value="{Binding Quantity}"
+                                 HorizontalOptions="CenterAndExpand"
+                                 ValueChanged="Stepper1_ValueChanged"
+                                 VerticalOptions="StartAndExpand">
+                                    </Stepper>
+                                    <Label
+                                   Grid.Row="2"
+                                   Grid.Column="1"                      
+                                   Text="Итого:"
+                                   FontAttributes="Italic"                       
+                                   VerticalOptions="Start"
+                                   FontSize="Medium"
+                                   HorizontalOptions="End"/>
+                                    <Label x:Name="_totalPrice"
+                                   Grid.Row="2"
+                                   Grid.Column="2"                      
+                                   Text="{Binding Price}"
+                                   FontAttributes="Bold"                       
+                                   VerticalOptions="Start"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Start"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        
+  
+        <Grid
+            x:Name="_orderGrid"
+            Padding="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*" />
+                <ColumnDefinition Width="0.6*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="orderButton" 
+                    Grid.Column="1"
+                    Text="Оформить заказ" 
+                    TextColor="White" 
+                    BackgroundColor="#DC2907" 
+                    FontAttributes="Bold" 
+                    Clicked="orderButton_Clicked" 
+                    HorizontalOptions="FillAndExpand" 
+                     
+                    MinimumWidthRequest="150"
+                    VerticalOptions="FillAndExpand" />
+            <Label x:Name="_totalOrderPrice"
+                       Grid.Column="0"                      
+                       Text="{Binding local:Cart.CartList}"
+                       FontAttributes="Bold"                       
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="Medium"
+                       HorizontalOptions="CenterAndExpand"/>
+            
+        </Grid>
     </StackLayout>
 </ContentPage>

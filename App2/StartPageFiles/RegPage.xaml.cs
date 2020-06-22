@@ -32,20 +32,21 @@ namespace App2.StartPageFiles
 
         private void regAcceptButton_Clicked(object sender, EventArgs e)
         {
-            var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
-            Regex regEx = new Regex(pattern);
+           // var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
+           // Regex regEx = new Regex(pattern);
             
 
             //проверка введённых данных
-            if (_username.Text == "")
-            {
-                DisplayAlert("Ошибка", "Введите имя", "OK");
-            }
-            else if (regEx.IsMatch(_phone.Text) == false)
-            {               
-                    DisplayAlert("Ошибка", "Некорректно введен номер телефона", "ОК");               
-            }
-            else if (_mail.Text == "")
+            //if (_username.Text == "")
+            //{
+            //    DisplayAlert("Ошибка", "Введите имя", "OK");
+            //}
+            //else if (regEx.IsMatch(_phone.Text) == false)
+            //{               
+            //        DisplayAlert("Ошибка", "Некорректно введен номер телефона", "ОК");               
+            //}
+            //else 
+            if (_mail.Text == "")
             {
                 DisplayAlert("Ошибка", "Введите почту", "OK");
             }
@@ -55,13 +56,13 @@ namespace App2.StartPageFiles
             }
             else if (_pass1.Text != _pass2.Text)
             {
-                DisplayAlert("Ошибка", "Пароль не совпадает", "OK");
+                DisplayAlert("Ошибка", "Пароли не совпадают", "OK");
             }
             else
             {
                 //всё в порядке
 
-                DisplayAlert("", "Всё норм", "OK");
+                DisplayAlert("Выполнено", "Регистрация прошла успешно", "OK");
             }
 
         }

@@ -48,26 +48,30 @@ namespace App2
 
         async Task NavigateToRandomPageAsync()
         {
-            string destinationRoute = Routes.ElementAt(rand.Next(0, Routes.Count)).Key;
+            string destinationRoute = null;
+            int temp = rand.Next(0, 2);
             string dishName = null;
 
-            switch (destinationRoute)
+            switch (temp)
             {
-                case "pizzadetails":
+                case 0:
+                    
+                    destinationRoute = "pizzadetails";
                     dishName = PizzaData.Pizzas.ElementAt(rand.Next(0, PizzaData.Pizzas.Count)).Name;
                     break;
-                case "drinksdetails":
+                case 1:
+                    destinationRoute = "drinksdetails";
                     dishName = DrinksData.Drinks.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;
                     break;
-                case "snacksdetails":
+                case 2:
+                    destinationRoute = "snacksdetails";
                     dishName = SnacksData.Snacks.ElementAt(rand.Next(0, SnacksData.Snacks.Count)).Name;
                     break;
                 //case "otherdetails":
                 //    dishName = OtherData.Other.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;
                 //    break;
 
-            }
-
+            }            
             ShellNavigationState state = Shell.Current.CurrentState;
             await Shell.Current.GoToAsync($"{state.Location}/{destinationRoute}?name={dishName}");
             Shell.Current.FlyoutIsPresented = false;

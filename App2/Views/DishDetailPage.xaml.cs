@@ -37,14 +37,15 @@ namespace App2.Views
             if (tempDish == null){
                 var dish = new DishInCart() { Name = _dish.Name, ImageUrl = _dish.ImageUrl, Price = _dish.Price, Quantity = 1 };
                 Cart.CartList.Add(dish);
-                DisplayAlert("Выполнено","В вашу корзину добавлен товар:" + _dish.Name, "ОК");
+                DisplayAlert("Выполнено","В вашу корзину добавлен товар: " + _dish.Name, "ОК");
             }
             else
             {
                 tempDish.Quantity = tempDish.Quantity + 1;
+                DisplayAlert("Выполнено", "В вашу корзину добавлен товар: " + _dish.Name, "ОК");
             }
-            
-            
+
+           
             Application.Current.MainPage.Navigation.PopAsync();
         }
     }

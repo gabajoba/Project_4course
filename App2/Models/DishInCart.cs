@@ -10,59 +10,10 @@ namespace App2.Models
 {
     public class DishInCart
     {
-        private string _name;
-        private string _price;
-        private int _quantity;
-        private string _imageUrl;
-        public string Name {
-            get
-            {
-                return this._name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-        public string Price {
-            get
-            {
-                return this._price;
-            }
-            set
-            {
-                _price = value;
-            }
-
-        }
-        public int Quantity {
-            get 
-            {
-                return this._quantity;
-            }
-            set 
-            {
-                _quantity = value;                
-                PropertyChanged(this, new System.ComponentModel.PropertyChangingEventArgs("Quantity"));
-            } 
-        }
-
-       
-
-        public string ImageUrl {
-            get
-            {
-                return this._imageUrl;
-            }
-            set
-            {
-                _imageUrl = value;
-            }
-        }
-       
-        private void PropertyChanged(DishInCart dishInCart, System.ComponentModel.PropertyChangingEventArgs propertyChangingEventArgs)
-        {
-            
-        }
+        public string Name { get; set; }
+        public string Price { get; set; }
+        public int Quantity { get; set; }
+        public string ImageUrl { get; set; }
+     
     }
 }
