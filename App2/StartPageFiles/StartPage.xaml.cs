@@ -1,10 +1,5 @@
 ﻿using App2.Data.User;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -33,6 +28,7 @@ namespace App2.StartPageFiles
             UserInfo.Message = null;
             UserInfo.Role = null;
             UserInfo.Token = null;
+
             var page = new AppShell();
             (Application.Current.MainPage) = page;
         }

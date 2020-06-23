@@ -1,16 +1,12 @@
 ﻿using App2.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
+
 namespace App2.Data
-{
-    
+{  
     public static class AllDishesData
     {
         private static readonly string getURL = "https://api-eldoed.herokuapp.com/products";       
@@ -25,20 +21,14 @@ namespace App2.Data
                     httpRequestMessage.RequestUri = new Uri(getURL);
                     httpRequestMessage.Method = HttpMethod.Get;
                     httpRequestMessage.Headers.Add("null", "null");
-
                     Task<HttpResponseMessage> httpResponse = httpClient.SendAsync(httpRequestMessage);
 
                     using (HttpResponseMessage httpResponseMessage = httpResponse.Result)
                     {
-                        Console.WriteLine(httpResponseMessage.ToString());
-
-                        //response data
                         HttpContent responseContent = httpResponseMessage.Content;
                         Task<string> responseData = responseContent.ReadAsStringAsync();
                         string data = responseData.Result;
-
                         JSONDishesList dishesList = JsonConvert.DeserializeObject<JSONDishesList>(responseData.Result);
-
 
                         foreach (JSONDishTemplate dish in dishesList.Data)
                         {
@@ -61,7 +51,6 @@ namespace App2.Data
                                 case "pizza":
                                     {
                                         PizzaData.Pizzas.Add(temp);
-
                                         break;
                                     };
 
@@ -85,16 +74,13 @@ namespace App2.Data
 
                                 default:
                                     {
-
                                         break;
                                     };
-
                             }
                         }
                     }
                 }
-            }
-           
+            }           
         }        
     }
 }

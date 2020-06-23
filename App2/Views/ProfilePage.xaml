@@ -11,17 +11,18 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <Label x:Name="_emailLabel" 
-                Text="{Binding Email}"
-                FontSize="Large"
-                TextColor="OrangeRed">
+            <Label 
+                   x:Name="_emailLabel" 
+                   Text="{Binding Email}"
+                   FontSize="Large"
+                   TextColor="OrangeRed">
             </Label>
             <Label
-                x:Name="_test2"
-                Margin="15,15,15,15" 
-                Text="Ваши заказы:"
-                FontSize="Medium"
-                TextColor="OrangeRed">
+                    x:Name="_test2"
+                    Margin="15,15,15,15" 
+                    Text="Ваши заказы:"
+                    FontSize="Medium"
+                    TextColor="OrangeRed">
             </Label>
 
             <Button x:Name="authButton" 

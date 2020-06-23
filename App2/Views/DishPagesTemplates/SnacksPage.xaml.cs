@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using App2.Models;
@@ -26,16 +21,10 @@ namespace App2.Views
             }
             else
             {
-                string snackName = (e.CurrentSelection.FirstOrDefault() as Dish).Name;
-                // This works because route names are unique in this application.            
+                string snackName = (e.CurrentSelection.FirstOrDefault() as Dish).Name;          
                 await Shell.Current.GoToAsync($"snacksdetails?name={snackName}");
-                // The full route is shown below.
-                // await Shell.Current.GoToAsync($"//animals/domestic/cats/catdetails?name={drinkName}");
-
-
                 collection.SelectedItem = null;
             }
-
         }
     }
 }

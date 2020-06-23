@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Text.RegularExpressions;
 using App2.Models;
-using App2.Views;
 using Xamarin.Forms;
 
 namespace App2.Data
 {
-
     class Cart
     {
         public static ObservableCollection<DishInCart> CartList { get; private set; }
@@ -25,6 +20,7 @@ namespace App2.Data
             }
             CartTotal = temp;
         }
+
         public Command<DishInCart> RemoveCommand
         {
             get
@@ -37,6 +33,7 @@ namespace App2.Data
 
             }
         }
+
         public static double CartTotal
         {
             get;

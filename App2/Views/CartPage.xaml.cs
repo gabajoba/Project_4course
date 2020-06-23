@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using App2.Data;
 using App2.Models;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace App2.Views
 {
-
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CartPage : ContentPage
     {
-
         public void ShowOrderGrid()
         {
             if (Cart.CartList.Count <= 0)
@@ -28,12 +21,11 @@ namespace App2.Views
                 this._orderGrid.IsVisible = true;
             }
         }
+
         public CartPage()
         {
             InitializeComponent();
             ShowOrderGrid();
-
-
         }
 
         private void Stepper1_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -56,22 +48,21 @@ namespace App2.Views
             }
             _totalOrderPrice.Text = "Сумма заказа:" + Cart.CartTotal + " Руб.";
             ShowOrderGrid();
-
         }
+
         private void orderButton_Clicked(object sender, EventArgs e)
         {
 
         }
+
         private void removeButton_Clicked(object sender, EventArgs e)
         {
             var button = sender as Button;
             var product = button?.BindingContext as DishInCart;
             var vm = BindingContext as Cart;
             vm?.RemoveCommand.Execute(product);
-
             ShowOrderGrid();
             _totalOrderPrice.Text = "Сумма заказа:" + Cart.CartTotal + " Руб.";
         }
     }
-
 }

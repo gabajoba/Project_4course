@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+﻿using Newtonsoft.Json;
 
 namespace App2.Data
 {
@@ -29,5 +24,6 @@ namespace App2.Data
 
         [JsonProperty("__v")]
         public long V { get; set; }
+
     }
 }

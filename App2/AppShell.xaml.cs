@@ -22,6 +22,7 @@ namespace App2
         public Dictionary<string, Type> Routes { get; } = new Dictionary<string, Type>();
 
         public ICommand HelpCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
+
         public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync());
 
         public AppShell()
@@ -46,6 +47,7 @@ namespace App2
 
             Routes.Add("regdetails", typeof(RegPage));
             Routes.Add("authdetails", typeof(AuthPage));
+
             foreach (var item in Routes)
             {
                 Routing.RegisterRoute(item.Key, item.Value);
@@ -61,7 +63,6 @@ namespace App2
             switch (temp)
             {
                 case 0:
-
                     destinationRoute = "pizzadetails";
                     dishName = PizzaData.Pizzas.ElementAt(rand.Next(0, PizzaData.Pizzas.Count)).Name;
                     break;
@@ -77,7 +78,6 @@ namespace App2
                     //destinationRoute = "otherdetails";
                     //    dishName = OtherData.Other.ElementAt(rand.Next(0, DrinksData.Drinks.Count)).Name;
                     //    break;
-
             }
             ShellNavigationState state = Shell.Current.CurrentState;
             await Shell.Current.GoToAsync($"{state.Location}/{destinationRoute}?name={dishName}");
@@ -86,14 +86,10 @@ namespace App2
 
         void OnNavigating(object sender, ShellNavigatingEventArgs e)
         {
-
-
         }
-
 
         void OnNavigated(object sender, ShellNavigatedEventArgs e)
         {
-
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace App2.Models
+﻿namespace App2.Models
 {
     public class Dish
     {

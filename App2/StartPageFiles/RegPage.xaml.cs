@@ -3,12 +3,6 @@ using App2.Data.User;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,27 +13,19 @@ namespace App2.StartPageFiles
     {
         public RegPage()
         {
-
-            InitializeComponent();
-            //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#ff8256");
-            //((NavigationPage)Application.Current.MainPage).Title = "Регистрация";
+            InitializeComponent();         
         }
 
         protected override bool OnBackButtonPressed()
-        {
-            //Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1]);
+        {           
             Application.Current.MainPage.Navigation.PopAsync();
             return false;
-
-            //return base.OnBackButtonPressed();
         }
 
         private void regAcceptButton_Clicked(object sender, EventArgs e)
         {
             // var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
             // Regex regEx = new Regex(pattern);
-
-
             //проверка введённых данных
             //if (_username.Text == "")
             //{
@@ -92,7 +78,6 @@ namespace App2.StartPageFiles
                     DisplayAlert("Что-то пошло не так", "Возможно пользователь с таким E-Mail-ом уже существует", "ОК");
                 }
             }
-
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace App2
 {
@@ -15,7 +13,6 @@ namespace App2
             page.BarBackgroundColor = Color.Orange;
 
             MainPage = page;
-
         }
 
         protected override void OnStart()
@@ -29,6 +26,5 @@ namespace App2
         protected override void OnResume()
         {
         }
-
     }
 }

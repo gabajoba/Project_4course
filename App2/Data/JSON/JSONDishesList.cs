@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using System.Globalization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace App2.Data
 {
@@ -11,5 +9,6 @@ namespace App2.Data
     {
         [JsonProperty("data")]
         public JSONDishTemplate[] Data { get; set; }
+
     }
 }

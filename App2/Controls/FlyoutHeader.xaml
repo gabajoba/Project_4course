@@ -10,10 +10,5 @@
         <Image Aspect="AspectFill" 
                Source="fadelogo.jpg" 
                Opacity="1" />
-        <!--<Label Text="Animals" 
-               TextColor="White" 
-               FontAttributes="Bold" 
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center" />-->
     </Grid>
 </ContentView>

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.GoogleMaps;
 using Xamarin.Forms.Xaml;
 
 namespace App2.Views
@@ -20,13 +14,9 @@ namespace App2.Views
         {
             InitializeComponent();
             BindingContext = this;
-
         }
         void OnTapGestureRecognizerTapped(object sender, EventArgs args)
         {
-
-            // watch the monkey go from color to black&white!
-
             if (sender == vk)
             {
                 Launcher.OpenAsync("https://gabajoba.ru/");
@@ -43,9 +33,6 @@ namespace App2.Views
             {
                 Launcher.OpenAsync("https://www.guillemrecolons.com/wp-content/uploads/2011/02/twitter_dead.jpg");
             }
-
         }
-
     }
-
 }

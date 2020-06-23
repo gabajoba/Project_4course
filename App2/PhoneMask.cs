@@ -32,11 +32,9 @@ namespace App2
         private void OnEntryTextChanged(object sender, TextChangedEventArgs args)
         {
             if (!string.IsNullOrWhiteSpace(args.NewTextValue))
-            {
-                // If the new value is longer than the old value, the user is  
+            {               
                 if (args.OldTextValue != null && args.NewTextValue.Length < args.OldTextValue.Length)
                     return;
-
                 var value = args.NewTextValue;
                 switch (value.Length)
                 {
@@ -59,15 +57,8 @@ namespace App2
                         {
                             ((Entry)sender).Text += "-";
                             return;
-                        }
-                   
+                        }                   
                 }
-
-
-
-              
-                
-
                 ((Entry)sender).Text = args.NewTextValue;
             }
         }

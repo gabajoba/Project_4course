@@ -3,6 +3,7 @@ using App2.Models;
 using System;
 using System.Linq;
 using Xamarin.Forms;
+
 namespace App2.Views
 {
     [QueryProperty("Name", "name")]
@@ -21,6 +22,7 @@ namespace App2.Views
                 return this.Name;
             }
         }
+
         public DishDetailPage()
         {
             InitializeComponent();
@@ -32,8 +34,8 @@ namespace App2.Views
 
         private void orderButton_Clicked(object sender, EventArgs e)
         {
-
             var tempDish = Cart.CartList.FirstOrDefault(m => m.Name == _dish.Name);
+
             if (tempDish == null)
             {
                 var dish = new DishInCart() { Name = _dish.Name, ImageUrl = _dish.ImageUrl, Price = _dish.Price, Quantity = 1 };
@@ -45,7 +47,6 @@ namespace App2.Views
                 tempDish.Quantity = tempDish.Quantity + 1;
                 DisplayAlert("Выполнено", "В вашу корзину добавлен товар: " + _dish.Name, "ОК");
             }
-
 
             Application.Current.MainPage.Navigation.PopAsync();
         }

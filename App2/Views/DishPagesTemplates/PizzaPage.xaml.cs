@@ -2,12 +2,10 @@
 using App2.Models;
 using Xamarin.Forms;
 
-
 namespace App2.Views
 {
     public partial class PizzaPage : ContentPage
     {
-
         public PizzaPage()
         {
             InitializeComponent();
@@ -23,9 +21,6 @@ namespace App2.Views
             {
                 string pizzaName = (e.CurrentSelection.FirstOrDefault() as Dish).Name;
                 await Shell.Current.GoToAsync($"pizzadetails?name={pizzaName}");
-
-
-
                 collection.SelectedItem = null;
             }
         }
