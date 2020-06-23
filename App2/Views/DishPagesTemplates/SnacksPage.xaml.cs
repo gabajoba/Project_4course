@@ -35,7 +35,7 @@ namespace App2.Views
 
                 collection.SelectedItem = null;
             }
-            
+
         }
     }
 }

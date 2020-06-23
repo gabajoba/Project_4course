@@ -15,7 +15,7 @@ namespace App2.Views
     {
         public DrinksPage()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -35,7 +35,7 @@ namespace App2.Views
 
                 collection.SelectedItem = null;
             }
-            
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace App2.Views
     [QueryProperty("Name", "name")]
     public partial class DishDetailPage : ContentPage
     {
-       public Dish _dish;
+        public Dish _dish;
         public string Name
         {
             set
@@ -32,12 +32,13 @@ namespace App2.Views
 
         private void orderButton_Clicked(object sender, EventArgs e)
         {
-            
+
             var tempDish = Cart.CartList.FirstOrDefault(m => m.Name == _dish.Name);
-            if (tempDish == null){
+            if (tempDish == null)
+            {
                 var dish = new DishInCart() { Name = _dish.Name, ImageUrl = _dish.ImageUrl, Price = _dish.Price, Quantity = 1 };
                 Cart.CartList.Add(dish);
-                DisplayAlert("Выполнено","В вашу корзину добавлен товар: " + _dish.Name, "ОК");
+                DisplayAlert("Выполнено", "В вашу корзину добавлен товар: " + _dish.Name, "ОК");
             }
             else
             {
@@ -45,7 +46,7 @@ namespace App2.Views
                 DisplayAlert("Выполнено", "В вашу корзину добавлен товар: " + _dish.Name, "ОК");
             }
 
-           
+
             Application.Current.MainPage.Navigation.PopAsync();
         }
     }

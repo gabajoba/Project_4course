@@ -1,4 +1,8 @@
-﻿using System;
+﻿using App2.Data;
+using App2.Data.User;
+using Newtonsoft.Json;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +19,7 @@ namespace App2.StartPageFiles
     {
         public RegPage()
         {
-           
+
             InitializeComponent();
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#ff8256");
             //((NavigationPage)Application.Current.MainPage).Title = "Регистрация";
@@ -32,9 +36,9 @@ namespace App2.StartPageFiles
 
         private void regAcceptButton_Clicked(object sender, EventArgs e)
         {
-           // var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
-           // Regex regEx = new Regex(pattern);
-            
+            // var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
+            // Regex regEx = new Regex(pattern);
+
 
             //проверка введённых данных
             //if (_username.Text == "")
@@ -60,9 +64,33 @@ namespace App2.StartPageFiles
             }
             else
             {
-                //всё в порядке
+                try
+                {
+                    var client = new RestClient("https://api-eldoed.herokuapp.com/signup");
+                    client.Timeout = -1;
+                    var request = new RestRequest(Method.POST);
+                    request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+                    request.AddParameter("email", _mail.Text.ToString());
+                    request.AddParameter("password", _pass1.Text.ToString());
+                    IRestResponse response = client.Execute(request);
 
-                DisplayAlert("Выполнено", "Регистрация прошла успешно", "OK");
+                    string responseData = response.Content.ToString();
+
+                    JSONauth tempUser = JsonConvert.DeserializeObject<JSONauth>(responseData);
+
+                    UserInfo.Email = tempUser.Data.Email;
+                    UserInfo.Message = tempUser.Message;
+                    UserInfo.Role = tempUser.Data.Role;
+                    UserInfo.Token = tempUser.Token;
+
+                    DisplayAlert("Выполнено", "Регистрация прошла успешно", "OK");
+                    var page = new AppShell(UserInfo.Email);
+                    (Application.Current.MainPage) = page;
+                }
+                catch
+                {
+                    DisplayAlert("Что-то пошло не так", "Возможно пользователь с таким E-Mail-ом уже существует", "ОК");
+                }
             }
 
         }

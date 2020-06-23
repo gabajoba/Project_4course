@@ -4,11 +4,26 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2.Views.ProfilePage"
+             x:Class="App2.Views.ProfilePage"            
              Title="Профиль">
+
+
     <ContentPage.Content>
-        <StackLayout Padding="12,12,12,12" >
-            <!-- Войти -->
+
+        <StackLayout>
+            <Label x:Name="_emailLabel" 
+                Text="{Binding Email}"
+                FontSize="Large"
+                TextColor="OrangeRed">
+            </Label>
+            <Label
+                x:Name="_test2"
+                Margin="15,15,15,15" 
+                Text="Ваши заказы:"
+                FontSize="Medium"
+                TextColor="OrangeRed">
+            </Label>
+
             <Button x:Name="authButton" 
                     Text="Войти" 
                     TextColor="White"
@@ -20,7 +35,6 @@
                     HorizontalOptions="Center" 
                     HeightRequest="100" 
                     WidthRequest="300"/>
-            <!-- Регистрация -->
             <Button x:Name="regButton" 
                     Text="Регистрация" 
                     TextColor="White"

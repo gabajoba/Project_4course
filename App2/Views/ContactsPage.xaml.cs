@@ -15,19 +15,19 @@ namespace App2.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactsPage : ContentPage
     {
-        public ICommand TapCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url)); 
+        public ICommand TapCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
         public ContactsPage()
         {
             InitializeComponent();
             BindingContext = this;
-            
+
         }
         void OnTapGestureRecognizerTapped(object sender, EventArgs args)
         {
-     
+
             // watch the monkey go from color to black&white!
-            
-           if(sender == vk)
+
+            if (sender == vk)
             {
                 Launcher.OpenAsync("https://gabajoba.ru/");
             }
@@ -47,5 +47,5 @@ namespace App2.Views
         }
 
     }
-    
+
 }

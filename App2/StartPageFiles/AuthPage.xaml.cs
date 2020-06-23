@@ -18,7 +18,7 @@ namespace App2.StartPageFiles
     {
         public AuthPage()
         {
-            
+
             InitializeComponent();
             //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#ff8256");
             //((NavigationPage)Application.Current.MainPage).Title = "Авторизация";
@@ -34,24 +34,46 @@ namespace App2.StartPageFiles
         private void authButton_Clicked(object sender, EventArgs e)
         {
 
-            var client = new RestClient("https://api-eldoed.herokuapp.com/login");
-            client.Timeout = -1;
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-            request.AddParameter("email", _email.Text.ToString());
-            request.AddParameter("password", _pass1.Text.ToString());
-            IRestResponse response = client.Execute(request);                
-                     
-            string responseData = response.Content.ToString();
-            
-            JSONauth tempUser = JsonConvert.DeserializeObject<JSONauth>(responseData);
+            if (_email.Text == "")
+            {
+                DisplayAlert("Ошибка", "Вы не ввели E-Mail", "OK");
+            }
+            else
+            if (_pass1.Text == "")
+            {
+                DisplayAlert("Ошибка", "Вы не ввели пароль", "OK");
+            }
+            else
+            {
 
-            UserInfo.Email = tempUser.Data.Email;
-            UserInfo.Message = tempUser.Message;
-            UserInfo.Role = tempUser.Data.Role;
-            UserInfo.Token = tempUser.Token;
+                try
+                {
+                    var client = new RestClient("https://api-eldoed.herokuapp.com/login");
+                    client.Timeout = -1;
+                    var request = new RestRequest(Method.POST);
+                    request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+                    request.AddParameter("email", _email.Text.ToString());
+                    request.AddParameter("password", _pass1.Text.ToString());
+                    IRestResponse response = client.Execute(request);
 
-            DisplayAlert(UserInfo.Email.ToString(), UserInfo.Message.ToString(), UserInfo.Role.ToString());
+                    string responseData = response.Content.ToString();
+
+                    JSONauth tempUser = JsonConvert.DeserializeObject<JSONauth>(responseData);
+
+                    UserInfo.Email = tempUser.Data.Email;
+                    UserInfo.Message = tempUser.Message;
+                    UserInfo.Role = tempUser.Data.Role;
+                    UserInfo.Token = tempUser.Token;
+
+                    DisplayAlert("Выполнено", "Авторизация прошла успешно", "OK");
+                    var page = new AppShell(UserInfo.Email);
+                    (Application.Current.MainPage) = page;
+                }
+                catch
+                {
+                    DisplayAlert("Ошибка", "Введен неверный логин или пароль", "ОК");
+                }
+            }
 
 
         }
