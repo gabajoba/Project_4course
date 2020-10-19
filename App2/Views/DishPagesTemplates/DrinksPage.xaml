@@ -11,7 +11,7 @@
              mc:Ignorable="d"
              x:Class="App2.Views.DrinksPage">
     
-    <ContentPage.Resources>
+    <!--<ContentPage.Resources>
         <Style TargetType="Grid">
             <Setter Property="VisualStateManager.VisualStateGroups">
                 <VisualStateGroupList>
@@ -20,21 +20,21 @@
                         <VisualState x:Name="Selected">
                             <VisualState.Setters>
                                 <Setter Property="BackgroundColor" 
-                                        Value="#039BE6" />
+                                        Value="Black" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
                 </VisualStateGroupList>
             </Setter>
         </Style>
-    </ContentPage.Resources>
+    </ContentPage.Resources>-->
 
     <Shell.SearchHandler>
-        <controls:DishSearchHandler Placeholder="Enter search term"
+        <controls:DishSearchHandler Placeholder="Поиск"
                                       ShowsResults="true"
                                       ItemTemplate="{StaticResource DishSearchTemplate}"
                                       Dishes="{x:Static data:AllDishesData.AllDishes}"
-                                      SelectedItemNavigationTarget="{x:Type views:DrinksDetailPage}" />
+                                      SelectedItemNavigationTarget="{x:Type views:DishDetailPage}" />
     </Shell.SearchHandler>
 
     <CollectionView Margin="20"

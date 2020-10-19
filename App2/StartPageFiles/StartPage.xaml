@@ -28,56 +28,37 @@
             <!-- Войти -->
             <Button x:Name="authButton" 
                     Text="Войти" 
-                    TextColor="White" 
+                    TextColor="White"
+                    FontSize="20"
                     BackgroundColor="#DC2907" 
                     FontAttributes="Bold" 
-                    
-                    Clicked="AuthButton_Clicked" 
-                    
-                    Margin="0,250,0,5"  
+                    Clicked="AuthButton_Clicked"
+                    Margin="0,150,0,5"  
                     HorizontalOptions="Center" 
                     HeightRequest="100" 
                     WidthRequest="300"/>
             <!-- Регистрация -->
             <Button x:Name="regButton" 
                     Text="Регистрация" 
-                    TextColor="White" 
+                    TextColor="White"
+                    FontSize="20"
                     BackgroundColor="#FF6900" 
                     FontAttributes="Bold" 
-                    
-                    Clicked="RegButton_Clicked" 
-                                        
+                    Clicked="RegButton_Clicked"                    
                     Margin="0,5"                   
                     HorizontalOptions="Center" 
                     HeightRequest="100"
                     WidthRequest="300"/>
             <!-- Пропустить -->
             <Button x:Name="skipButton"
-                    Text="Пропустить" 
+                    Text="Пропустить"
+                    FontSize="14"
                     BackgroundColor="Transparent" 
                     TextColor="Black" 
                     FontAttributes="Italic" 
-                    FontSize="Small"
-                    
                     Clicked="SkipButton_Clicked" 
-                    
                     Margin="0,5" 
                     HorizontalOptions="Center"/>
-            
-            <!--<Label HorizontalOptions="Center">
-                <Label.FormattedText>
-                    <FormattedString >
-                        <Span Text="Пропустить"
-                            TextColor="Black"
-                            TextDecorations="Underline">
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://docs.microsoft.com/xamarin/" />
-                            </Span.GestureRecognizers>
-                        </Span>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

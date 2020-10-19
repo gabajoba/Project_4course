@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:behavior="clr-namespace:App2" 
              mc:Ignorable="d"
-             x:Class="App2.StartPageFiles.RegPage">
+             x:Class="App2.StartPageFiles.RegPage"
+             Title="Регистрация">
 
     <NavigationPage.TitleView>
         <Grid >
@@ -24,11 +25,10 @@
         </Grid>
     </NavigationPage.TitleView>
     
-    <ContentPage.Content
-       >
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="15" Padding="0">
-                <!-- Имя -->
+                <!-- Имя --><!--
                 <StackLayout HeightRequest="100" 
                              VerticalOptions="Start" 
                              HorizontalOptions="FillAndExpand" 
@@ -48,8 +48,8 @@
                            BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
                            VerticalOptions="CenterAndExpand" />
-                </StackLayout>
-                <!-- Номер телефона -->
+                </StackLayout>-->
+                <!-- Номер телефона --><!--
                 <StackLayout HeightRequest="100" 
                              VerticalOptions="Start" 
                              HorizontalOptions="FillAndExpand" 
@@ -61,7 +61,7 @@
                            VerticalOptions="Center" 
                            FontAttributes="Bold" />
                     <Entry x:Name="_phone"
-                           Text="{Binding Phone}"
+                           Text=""
                            Keyboard="Telephone"
                            Placeholder="Введите номер телефона(начиная с 7)"
                            TextColor="Black"
@@ -75,7 +75,7 @@
                             <behavior:EntryLengthValidator MaxLength="15"/>
                         </Entry.Behaviors>
                     </Entry>
-                </StackLayout>
+                </StackLayout>-->
                 <!-- Электронная почта -->
                 <StackLayout HeightRequest="100" 
                              VerticalOptions="Start" 
@@ -90,7 +90,7 @@
                     <Entry x:Name="_mail"
                            Text=""
                            Keyboard="Email"
-                           Placeholder="Введите EMail"
+                           Placeholder="Введите E-Mail"
                            TextColor="Black"
                            FontSize="Medium"
                            BackgroundColor="Transparent" 

@@ -5,6 +5,7 @@ namespace App2
     public class EntryLengthValidator : Behavior<Entry>
     {
         public int MaxLength { get; set; }
+
         public int MinLength { get; set; } = 0;
 
         protected override void OnAttachedTo(Entry bindable)
@@ -23,13 +24,10 @@ namespace App2
         {
             var entry = (Entry)sender;
 
-            // if Entry text is longer than valid length  
             if (entry.Text.Length > this.MaxLength)
             {
                 string entryText = entry.Text;
-
-                entryText = entryText.Remove(entryText.Length - 1); // remove last char  
-
+                entryText = entryText.Remove(entryText.Length - 1);  
                 entry.Text = entryText;
             }
 

@@ -1,49 +1,86 @@
 ﻿using App2.Models;
+using Newtonsoft.Json;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace App2.Data
-{
-    
+{  
     public static class AllDishesData
     {
+        private static readonly string getURL = "https://api-eldoed.herokuapp.com/products";       
         public static IList<Dish> AllDishes { get; private set; }
-        public static IList<IList<Dish>> NeBidloCode { get; set; }
-        static AllDishesData()
-            
+        static AllDishesData()        
         {
             AllDishes = new List<Dish>();
-
-
-            NeBidloCode = new List<IList<Dish>>
+            using (HttpClient httpClient = new HttpClient())
             {
-                DrinksData.Drinks,
-                PizzaData.Pizzas
-            };
-
-
-            foreach (List<Dish> d in NeBidloCode)
-            {
-                foreach (Dish _dish in d)
+                using (HttpRequestMessage httpRequestMessage = new HttpRequestMessage())
                 {
-                    AllDishes.Add(_dish);
+                    httpRequestMessage.RequestUri = new Uri(getURL);
+                    httpRequestMessage.Method = HttpMethod.Get;
+                    httpRequestMessage.Headers.Add("null", "null");
+                    Task<HttpResponseMessage> httpResponse = httpClient.SendAsync(httpRequestMessage);
 
+                    using (HttpResponseMessage httpResponseMessage = httpResponse.Result)
+                    {
+                        HttpContent responseContent = httpResponseMessage.Content;
+                        Task<string> responseData = responseContent.ReadAsStringAsync();
+                        string data = responseData.Result;
+                        JSONDishesList dishesList = JsonConvert.DeserializeObject<JSONDishesList>(responseData.Result);
+
+                        foreach (JSONDishTemplate dish in dishesList.Data)
+                        {
+                            Dish temp = new Dish()
+                            {
+                                Name = dish.Name.ToString()
+                                ,
+                                Price = dish.Price.ToString() + " руб."
+                                ,
+                                Details = dish.Description.ToString()
+                                ,
+                                ImageUrl = "https://api-eldoed.herokuapp.com/" + (dish.ImageData.ToString().Replace(@"server\", "")).Replace(@"\", "/")
+
+                            };
+
+                            AllDishes.Add(temp);
+                            switch (dish.Category.ToString())
+                            {
+
+                                case "pizza":
+                                    {
+                                        PizzaData.Pizzas.Add(temp);
+                                        break;
+                                    };
+
+                                case "snacks":
+                                    {
+                                        SnacksData.Snacks.Add(temp);
+                                        break;
+                                    };
+
+                                case "drinks":
+                                    {
+                                        DrinksData.Drinks.Add(temp);
+                                        break;
+                                    };
+
+                                case "other":
+                                    {
+                                        OtherData.Other.Add(temp);
+                                        break;
+                                    };
+
+                                default:
+                                    {
+                                        break;
+                                    };
+                            }
+                        }
+                    }
                 }
-            }
-            //foreach (Dish _dish in PizzaData.Pizzas)
-            //    {
-            //        AllDishes.Add(_dish);
-
-            //    }
-            //    foreach (Dish _dish in DrinksData.Drinks)
-            //    {
-            //        AllDishes.Add(_dish);
-            //    Console.WriteLine(_dish.Name);
-            //    }
-
-        }
-        
+            }           
+        }        
     }
 }

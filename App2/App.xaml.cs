@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace App2
 {
@@ -9,15 +7,14 @@ namespace App2
         public App()
         {
             InitializeComponent();
-            
+
             var page = new NavigationPage(new App2.StartPageFiles.StartPage());
             page.BackgroundColor = Color.White;
             page.BarBackgroundColor = Color.Orange;
-           
+
             MainPage = page;
-            
         }
-       
+
         protected override void OnStart()
         {
         }

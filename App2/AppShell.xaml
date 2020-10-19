@@ -7,7 +7,7 @@
              xmlns:controls="clr-namespace:App2.Controls"       
              mc:Ignorable="d"
              x:Class="App2.AppShell"
-       
+                
              BackgroundColor="#ff4400"
              FlyoutBackgroundColor="#ffac08"
        
@@ -15,12 +15,12 @@
              DisabledColor="Gray"
              UnselectedColor="Black"
        
-             FlyoutBehavior="Disabled"
+             FlyoutBehavior="Flyout"
              FlyoutHeaderBehavior="CollapseOnScroll">
     <!-- Static Resources -->
     <Shell.Resources>
         
-        <Style x:Key="BaseStyle"
+        <Style x:Key="BaseStyle"               
                TargetType="Element">
             <Setter Property="Shell.BackgroundColor"
                     Value="#455A64" />
@@ -45,7 +45,7 @@
         </Style>
         
         <Style x:Key="ProfileShell"
-               TargetType="Element"
+               TargetType="Element"           
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
                     Value="#ff8c00" />
@@ -85,8 +85,8 @@
         <DataTemplate>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.2*" />
-                    <ColumnDefinition Width="0.8*" />
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition Width="0.7*" />
                 </Grid.ColumnDefinitions>
                 <Image Source="{Binding Icon}"
                        Margin="5"
@@ -136,6 +136,16 @@
                           Title="Напитки"
                           Icon="drinkicon.png"
                           ContentTemplate="{DataTemplate views:DrinksPage}" />
+            <ShellContent Route="snack"
+                          Style="{StaticResource MenuShell}"
+                          Title="Закуски"
+                          Icon="snackicon.png"
+                          ContentTemplate="{DataTemplate views:SnacksPage}" />
+            <ShellContent Route="other"
+                          Style="{StaticResource MenuShell}"
+                          Title="Другое"
+                          Icon="othericon.png"
+                          ContentTemplate="{DataTemplate views:OtherPage}" />
         </Tab>
 
         <!--
@@ -154,11 +164,11 @@
         <ShellContent Route="cart"
                       Style="{StaticResource CartShell}"
                       Title="Корзина"
-                      Icon="cart.ico"
+                      Icon="cart.ico"     
                       ContentTemplate="{DataTemplate views:CartPage}" />
     </FlyoutItem>
     
-
+    
     <!--<ShellContent Route="about"
                   Style="{StaticResource AboutShell}"
                   Title="About"
