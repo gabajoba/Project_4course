@@ -1,11 +1,11 @@
-﻿using App2.Models;
+﻿using Eldoed.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace App2.Controls
+namespace Eldoed.Controls
 {
     public class DishSearchHandler : SearchHandler
     {

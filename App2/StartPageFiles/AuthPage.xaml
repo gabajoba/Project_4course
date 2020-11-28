@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              mc:Ignorable="d"
-             x:Class="App2.StartPageFiles.AuthPage"
+             x:Class="Eldoed.StartPageFiles.AuthPage"
              Title="Авторизация">
     
     <NavigationPage.TitleView>

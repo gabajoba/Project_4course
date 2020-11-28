@@ -1,7 +1,7 @@
-﻿using App2.Models;
+﻿using Eldoed.Models;
 using System.Collections.Generic;
 
-namespace App2.Data
+namespace Eldoed.Data
 {
     public static class DrinksData
     {

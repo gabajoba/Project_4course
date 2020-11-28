@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace App2.iOS
+namespace Eldoed.iOS
 {
     public class Application
     {

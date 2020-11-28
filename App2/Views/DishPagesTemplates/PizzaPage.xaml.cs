@@ -1,8 +1,8 @@
-﻿using App2.Models;
+﻿using Eldoed.Models;
 using System.Linq;
 using Xamarin.Forms;
 
-namespace App2.Views
+namespace Eldoed.Views
 {
     public partial class PizzaPage : ContentPage
     {

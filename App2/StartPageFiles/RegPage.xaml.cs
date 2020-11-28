@@ -1,12 +1,12 @@
-﻿using App2.Data;
-using App2.Data.User;
+﻿using Eldoed.Data;
+using Eldoed.Data.User;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App2.StartPageFiles
+namespace Eldoed.StartPageFiles
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegPage : ContentPage

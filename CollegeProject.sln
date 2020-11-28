@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2.Android", "App2.Android\App2.Android.csproj", "{6340B504-177A-4386-B494-EE409BDF6B6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eldoed.Android", "App2.Android\Eldoed.Android.csproj", "{6340B504-177A-4386-B494-EE409BDF6B6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2.iOS", "App2.iOS\App2.iOS.csproj", "{D96FCB56-5BB9-4235-AC28-2056A4E56E79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eldoed.iOS", "App2.iOS\Eldoed.iOS.csproj", "{D96FCB56-5BB9-4235-AC28-2056A4E56E79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2", "App2\App2.csproj", "{70B9FF20-2B9E-47D3-8AF8-1F92D05915A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eldoed", "App2\Eldoed.csproj", "{70B9FF20-2B9E-47D3-8AF8-1F92D05915A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

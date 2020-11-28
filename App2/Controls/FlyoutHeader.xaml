@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              HeightRequest="200"
-             x:Class="App2.Controls.FlyoutHeader">
+             x:Class="Eldoed.Controls.FlyoutHeader">
     
     <Grid BackgroundColor="Black">
         <Image Aspect="AspectFill" 

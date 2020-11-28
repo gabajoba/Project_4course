@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
-using App2.Models;
+using Eldoed.Models;
 using Xamarin.Forms;
 
-namespace App2.Data
+namespace Eldoed.Data
 {
     class Cart
     {

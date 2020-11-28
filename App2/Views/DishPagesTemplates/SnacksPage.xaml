@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:controls="clr-namespace:App2.Controls"
-             xmlns:data="clr-namespace:App2.Data"
-             xmlns:views="clr-namespace:App2.Views"
+             xmlns:controls="clr-namespace:Eldoed.Controls"
+             xmlns:data="clr-namespace:Eldoed.Data"
+             xmlns:views="clr-namespace:Eldoed.Views"
              mc:Ignorable="d"
-             x:Class="App2.Views.SnacksPage">
+             x:Class="Eldoed.Views.SnacksPage">
 
     
 

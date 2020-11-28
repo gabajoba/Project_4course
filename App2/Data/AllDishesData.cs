@@ -1,11 +1,11 @@
-﻿using App2.Models;
+﻿using Eldoed.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace App2.Data
+namespace Eldoed.Data
 {
      public static class AllDishesData
     {

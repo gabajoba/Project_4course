@@ -1,9 +1,9 @@
-﻿using App2.Models;
+﻿using Eldoed.Models;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App2.Views
+namespace Eldoed.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SnacksPage : ContentPage

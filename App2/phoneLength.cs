@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace App2
+namespace Eldoed
 {
     public class EntryLengthValidator : Behavior<Entry>
     {

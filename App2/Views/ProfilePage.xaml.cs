@@ -1,9 +1,9 @@
-﻿using App2.Data.User;
+﻿using Eldoed.Data.User;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App2.Views
+namespace Eldoed.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage : ContentPage

@@ -1,4 +1,4 @@
-﻿namespace App2.Data.User
+﻿namespace Eldoed.Data.User
 {
     abstract class UserInfo 
     {       

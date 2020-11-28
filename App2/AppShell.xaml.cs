@@ -1,7 +1,7 @@
-﻿using App2.Data;
-using App2.Data.User;
-using App2.StartPageFiles;
-using App2.Views;
+﻿using Eldoed.Data;
+using Eldoed.Data.User;
+using Eldoed.StartPageFiles;
+using Eldoed.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 
-namespace App2
+namespace Eldoed
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AppShell : Shell

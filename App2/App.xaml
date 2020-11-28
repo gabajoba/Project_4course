@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              mc:Ignorable="d"
-             x:Class="App2.App">
+             x:Class="Eldoed.App">
     <Application.Resources>
         <DataTemplate x:Key="DishTemplate">
             <Grid Padding="15">

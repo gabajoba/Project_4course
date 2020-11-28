@@ -1,9 +1,9 @@
-﻿using App2.Data.User;
+﻿using Eldoed.Data.User;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App2.StartPageFiles
+namespace Eldoed.StartPageFiles
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StartPage : ContentPage

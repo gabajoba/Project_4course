@@ -1,11 +1,11 @@
-﻿using App2.Data;
-using App2.Models;
+﻿using Eldoed.Data;
+using Eldoed.Models;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
 
-namespace App2.Views
+namespace Eldoed.Views
 {
     [QueryProperty("Name", "name")]
     public partial class DishDetailPage : ContentPage

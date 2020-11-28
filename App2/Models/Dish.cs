@@ -1,4 +1,4 @@
-﻿namespace App2.Models
+﻿namespace Eldoed.Models
 {
     public class Dish
     {

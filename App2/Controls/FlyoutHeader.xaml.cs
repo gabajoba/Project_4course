@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App2.Controls
+namespace Eldoed.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FlyoutHeader : ContentView

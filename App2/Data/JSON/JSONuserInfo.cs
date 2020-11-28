@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace App2.Data
+namespace Eldoed.Data
 {
     public class JSONuserInfo
     {

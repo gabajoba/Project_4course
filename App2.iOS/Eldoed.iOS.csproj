@@ -9,9 +9,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>App2.iOS</RootNamespace>
+    <RootNamespace>Eldoed.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>App2.iOS</AssemblyName>
+    <AssemblyName>Eldoed.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
@@ -131,9 +131,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\App2\App2.csproj">
-      <Project>{1C7A73EA-CEBE-4C9E-AE0C-72775956967A}</Project>
-      <Name>App2</Name>
+    <ProjectReference Include="..\App2\Eldoed.csproj">
+      <Project>{70B9FF20-2B9E-47D3-8AF8-1F92D05915A5}</Project>
+      <Name>Eldoed</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
