@@ -131,12 +131,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\App2\Eldoed.csproj">
-      <Project>{70B9FF20-2B9E-47D3-8AF8-1F92D05915A5}</Project>
-      <Name>Eldoed</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\profile.png" />
   </ItemGroup>
   <ItemGroup>
@@ -150,5 +144,11 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\test.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eldoed\Eldoed.csproj">
+      <Project>{f2b8dedf-f8db-473e-8209-982bb4f6ada8}</Project>
+      <Name>Eldoed</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
