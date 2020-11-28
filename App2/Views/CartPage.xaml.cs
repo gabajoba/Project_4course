@@ -1,7 +1,8 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using App2.Data;
+﻿using App2.Data;
+using App2.Data.User;
 using App2.Models;
+using System;
+using System.Text.RegularExpressions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,11 +15,13 @@ namespace App2.Views
         {
             if (Cart.CartList.Count <= 0)
             {
-                this._orderGrid.IsVisible = false;
+                _orderGrid.IsVisible = false;
+                CartEmpty.IsVisible = true;
             }
             else
             {
-                this._orderGrid.IsVisible = true;
+                _orderGrid.IsVisible = true;
+                CartEmpty.IsVisible = false;
             }
         }
 
@@ -28,7 +31,14 @@ namespace App2.Views
             ShowOrderGrid();
         }
 
-        private void Stepper1_ValueChanged(object sender, ValueChangedEventArgs e)
+        private static double PriceToDouble(string price)
+        {
+            var pattern = "^[0-9]+\\,*[0-9]+";
+            Regex regEx = new Regex(pattern);
+            var temp = double.Parse(regEx.Match(price).ToString());
+            return temp;
+        }
+        public void Stepper1_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             var button = sender as Stepper;
             var product = button?.BindingContext as DishInCart;
@@ -40,19 +50,25 @@ namespace App2.Views
             }
             else
             {
-                var pattern = "^[0-9]+\\,*[0-9]+";
-                Regex regEx = new Regex(pattern);
-                var _price = regEx.Match((button.Parent.FindByName("_priceLabel") as Label).Text).ToString();
-                (button.Parent.FindByName("_totalPrice") as Label).Text = (Double.Parse(_price) * button.Value).ToString() + " Руб.";
+                var _price = PriceToDouble((button.Parent.FindByName("_priceLabel") as Label).Text);
+                (button.Parent.FindByName("_totalPrice") as Label).Text = (_price * button.Value).ToString() + "руб.";
 
             }
-            _totalOrderPrice.Text = "Сумма заказа:" + Cart.CartTotal + " Руб.";
+            _totalOrderPrice.Text = $"Сумма заказа: {Cart.CartTotal} Руб.";
             ShowOrderGrid();
         }
 
         private void orderButton_Clicked(object sender, EventArgs e)
         {
-
+            
+            var temp = "";
+            foreach (DishInCart dish in Cart.CartList)
+            {
+                temp += $"\n{dish.Name} - {dish.Quantity}шт - {dish.Quantity*dish.Price}руб.";
+            }
+            DisplayAlert($"{UserInfo.Email ?? "Гость"}, ваш заказ на сумму {Cart.CartTotal} рублей в пути", temp , "OK");
+            Cart.CartList.Clear();
+            ShowOrderGrid();
         }
 
         private void removeButton_Clicked(object sender, EventArgs e)
@@ -62,7 +78,7 @@ namespace App2.Views
             var vm = BindingContext as Cart;
             vm?.RemoveCommand.Execute(product);
             ShowOrderGrid();
-            _totalOrderPrice.Text = "Сумма заказа:" + Cart.CartTotal + " Руб.";
+            _totalOrderPrice.Text = $"Сумма заказа: {Cart.CartTotal} Руб.";
         }
     }
 }

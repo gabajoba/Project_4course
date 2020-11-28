@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              mc:Ignorable="d"
              x:Class="App2.StartPageFiles.AuthPage"
              Title="Авторизация">
@@ -11,7 +11,7 @@
         <Grid >
             <Label Text="Авторизация"
                    HorizontalOptions="Start"
-                  VerticalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
                    FontAttributes="Bold"
                    FontSize="20"/>
             <Image Source="logo.png"
@@ -19,13 +19,13 @@
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="End" 
                    HeightRequest="60"/>
-
         </Grid>
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="15" Padding="0,100,0,0">
+            <StackLayout Spacing="15" 
+                         Padding="0,100,0,0">
                 <!-- Номер телефона -->
                 <StackLayout HeightRequest="100" 
                              VerticalOptions="Start" 
@@ -44,9 +44,7 @@
                            BackgroundColor="Transparent" 
                            FontSize="Medium"
                            HorizontalOptions="FillAndExpand" 
-                           VerticalOptions="CenterAndExpand"
-                           >
-                    </Entry>
+                           VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <!-- Пароль -->
                 <StackLayout HeightRequest="100" 
@@ -58,7 +56,7 @@
                            FontSize="Large" 
                            HorizontalOptions="Center"
                            VerticalOptions="Center" 
-                           FontAttributes="Bold" />
+                           FontAttributes="Bold"/>
                     <Entry x:Name="_pass1"
                            Text=""
                            Keyboard="Default"
@@ -68,21 +66,19 @@
                            FontSize="Medium"
                            BackgroundColor="Transparent" 
                            HorizontalOptions="FillAndExpand" 
-                           VerticalOptions="CenterAndExpand" />
+                           VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
+                <!-- Кнопка авторизации -->
                 <Button x:Name="authButton" 
-                    Text="Войти" 
-                    TextColor="#E4E3E3" 
-                    BackgroundColor="#FF6900" 
-                    FontAttributes="Bold" 
-                    
-                    Clicked="authButton_Clicked" 
-                                        
-                                    
-                    HorizontalOptions="Center" Margin="0,35,0,0" Padding="125,15,125,15" 
+                        Text="Войти" 
+                        TextColor="#E4E3E3" 
+                        BackgroundColor="#FF6900" 
+                        FontAttributes="Bold"             
+                        HorizontalOptions="Center" 
+                        Margin="0,35,0,0" 
+                        Padding="125,15,125,15" 
                         
-                    />
-
+                        Clicked="authButton_Clicked"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

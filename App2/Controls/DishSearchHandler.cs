@@ -1,10 +1,9 @@
 ﻿using App2.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
 using System.Linq;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace App2.Controls
 {

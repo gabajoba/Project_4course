@@ -1,10 +1,10 @@
 ﻿using App2.Data;
+using App2.Data.User;
 using App2.StartPageFiles;
 using App2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -31,11 +31,15 @@ namespace App2
             RegisterRoutes();
             BindingContext = this;
         }
-        public AppShell(string UserInfo)
+        public AppShell(JSONauth temp)
         {
             InitializeComponent();
             RegisterRoutes();
-            BindingContext = this;   
+            BindingContext = this;
+            UserInfo.Email = temp.Data.Email;
+            UserInfo.Message = temp.Message;
+            UserInfo.Role = temp.Data.Role;
+            UserInfo.Token = temp.Token;
         }
 
         void RegisterRoutes()

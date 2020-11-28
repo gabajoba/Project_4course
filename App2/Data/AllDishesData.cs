@@ -6,10 +6,10 @@ using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace App2.Data
-{  
-    public static class AllDishesData
+{
+     public static class AllDishesData
     {
-        private static readonly string getURL = "https://api-eldoed.herokuapp.com/products";       
+        private const string URL = "https://api-eldoed.herokuapp.com/products";       
         public static IList<Dish> AllDishes { get; private set; }
         static AllDishesData()        
         {
@@ -18,12 +18,12 @@ namespace App2.Data
             {
                 using (HttpRequestMessage httpRequestMessage = new HttpRequestMessage())
                 {
-                    httpRequestMessage.RequestUri = new Uri(getURL);
+                    httpRequestMessage.RequestUri = new Uri(URL);
                     httpRequestMessage.Method = HttpMethod.Get;
                     httpRequestMessage.Headers.Add("null", "null");
                     Task<HttpResponseMessage> httpResponse = httpClient.SendAsync(httpRequestMessage);
 
-                    using (HttpResponseMessage httpResponseMessage = httpResponse.Result)
+                    using (HttpResponseMessage httpResponseMessage = httpResponse?.Result)
                     {
                         HttpContent responseContent = httpResponseMessage.Content;
                         Task<string> responseData = responseContent.ReadAsStringAsync();
@@ -34,17 +34,17 @@ namespace App2.Data
                         {
                             Dish temp = new Dish()
                             {
-                                Name = dish.Name.ToString()
-                                ,
-                                Price = dish.Price.ToString() + " руб."
-                                ,
-                                Details = dish.Description.ToString()
-                                ,
-                                ImageUrl = "https://api-eldoed.herokuapp.com/" + (dish.ImageData.ToString().Replace(@"server\", "")).Replace(@"\", "/")
+                                Name = dish.Name.ToString(),
+                                Price = dish.Price.ToString() + " руб.",
+                                Details = dish.Description.ToString(),
+                                ImageUrl = 
+                                "https://api-eldoed.herokuapp.com/" 
+                                + (dish.ImageData.ToString().Replace(@"server\", "")).Replace(@"\", "/")
 
                             };
 
                             AllDishes.Add(temp);
+
                             switch (dish.Category.ToString())
                             {
 

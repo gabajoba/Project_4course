@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 mc:Ignorable="d"
-			 xmlns:local="clr-namespace:App2.Data"
-			 x:Class="App2.Views.CartPage"             
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:App2.Data"
+             mc:Ignorable="d"
+             x:Class="App2.Views.CartPage"             
 			 x:Name="_CartPage"
 			 >
 
@@ -13,9 +13,17 @@
     <ContentPage.BindingContext>
         <local:Cart></local:Cart>
     </ContentPage.BindingContext>
+    
     <StackLayout>
 
+        <Label x:Name="CartEmpty"					                    
+					Text="Корзина пуста"
+					FontAttributes="Bold"                       
+					VerticalOptions="CenterAndExpand"
+					FontSize="Large"				
+					HorizontalOptions="CenterAndExpand"/>
         <StackLayout>
+            
             <ListView x:Name="_test1"         
 					  Margin="0" 
 					  SelectionMode="None"
@@ -55,10 +63,10 @@
 										   VerticalOptions="End"/>
                                     <Button 
 										   x:Name="_removeButton"
-										   Text="X" 
-										   Clicked="removeButton_Clicked" 
 										   Grid.Row="0"
 										   Grid.Column="2"
+										   Text="X" 
+										   Clicked="removeButton_Clicked" 
 										   WidthRequest="35"
 										   TextColor="White"
 										   HeightRequest="35"
@@ -69,13 +77,21 @@
                                     <Label 
 										   x:Name="_priceLabel"
 										   Grid.Row="0"
-										   Margin="1"
-										   Grid.Column="1" 
+										   Grid.Column="1" 										   
 										   Text="{Binding Price}"
 										   FontSize="Medium"
 										   FontAttributes="Italic"                       
 										   VerticalOptions="Start"
 										   HorizontalOptions="End"/>
+                                    <Label 
+										   x:Name="_priceLabe2"
+										   Grid.Row="0"
+										   Grid.Column="2"
+										   Text="руб."
+										   FontSize="Medium"
+										   FontAttributes="Italic"                       
+										   VerticalOptions="Start"
+										   HorizontalOptions="Start"/>
                                     <Label 
 										   Margin="1"
 										   Grid.Row="0"
@@ -149,17 +165,17 @@
 					BackgroundColor="#DC2907" 
 					FontAttributes="Bold" 
 					Clicked="orderButton_Clicked" 
-					HorizontalOptions="FillAndExpand" 
-					 
+					HorizontalOptions="FillAndExpand" 					 
 					MinimumWidthRequest="150"
 					VerticalOptions="FillAndExpand" />
+            
             <Label x:Name="_totalOrderPrice"
-					   Grid.Column="0"                      
-					   Text="{Binding local:Cart.CartList}"
-					   FontAttributes="Bold"                       
-					   VerticalOptions="CenterAndExpand"
-					   FontSize="Medium"
-					   HorizontalOptions="CenterAndExpand"/>
+					Grid.Column="0"                      
+					Text="{Binding local:Cart.CartList}"
+					FontAttributes="Bold"                       
+					VerticalOptions="CenterAndExpand"
+					FontSize="Medium"
+					HorizontalOptions="CenterAndExpand"/>
 
         </Grid>
     </StackLayout>

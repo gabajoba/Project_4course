@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using App2.Models;
+﻿using App2.Models;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace App2.Views

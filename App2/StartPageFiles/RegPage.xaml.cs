@@ -23,19 +23,7 @@ namespace App2.StartPageFiles
         }
 
         private void regAcceptButton_Clicked(object sender, EventArgs e)
-        {
-            // var pattern = "^[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}$";
-            // Regex regEx = new Regex(pattern);
-            //проверка введённых данных
-            //if (_username.Text == "")
-            //{
-            //    DisplayAlert("Ошибка", "Введите имя", "OK");
-            //}
-            //else if (regEx.IsMatch(_phone.Text) == false)
-            //{               
-            //        DisplayAlert("Ошибка", "Некорректно введен номер телефона", "ОК");               
-            //}
-            //else 
+        {            
             if (_mail.Text == "")
             {
                 DisplayAlert("Ошибка", "Введите почту", "OK");
@@ -58,24 +46,20 @@ namespace App2.StartPageFiles
                     request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
                     request.AddParameter("email", _mail.Text.ToString());
                     request.AddParameter("password", _pass1.Text.ToString());
+                    //delay ???
                     IRestResponse response = client.Execute(request);
 
                     string responseData = response.Content.ToString();
 
                     JSONauth tempUser = JsonConvert.DeserializeObject<JSONauth>(responseData);
-
-                    UserInfo.Email = tempUser.Data.Email;
-                    UserInfo.Message = tempUser.Message;
-                    UserInfo.Role = tempUser.Data.Role;
-                    UserInfo.Token = tempUser.Token;
-
+                    Cart.CartList.Clear();
                     DisplayAlert("Выполнено", "Регистрация прошла успешно", "OK");
-                    var page = new AppShell(UserInfo.Email);
+                    var page = new AppShell(tempUser);
                     (Application.Current.MainPage) = page;
                 }
                 catch
                 {
-                    DisplayAlert("Что-то пошло не так", "Возможно пользователь с таким E-Mail-ом уже существует", "ОК");
+                    DisplayAlert("Что-то пошло не так", "Возможно, пользователь с таким E-Mail-ом уже существует", "ОК");
                 }
             }
         }

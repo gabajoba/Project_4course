@@ -28,7 +28,7 @@ namespace App2.StartPageFiles
                 DisplayAlert("Ошибка", "Вы не ввели E-Mail", "OK");
             }
             else
-            if (_pass1.Text == "")
+            if (_pass1?.Text == "")
             {
                 DisplayAlert("Ошибка", "Вы не ввели пароль", "OK");
             }
@@ -43,20 +43,16 @@ namespace App2.StartPageFiles
                     request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
                     request.AddParameter("email", _email.Text.ToString());
                     request.AddParameter("password", _pass1.Text.ToString());
-
+                    //delay ???
                     IRestResponse response = client.Execute(request);
 
                     string responseData = response.Content.ToString();
 
                     JSONauth tempUser = JsonConvert.DeserializeObject<JSONauth>(responseData);
 
-                    UserInfo.Email = tempUser.Data.Email;
-                    UserInfo.Message = tempUser.Message;
-                    UserInfo.Role = tempUser.Data.Role;
-                    UserInfo.Token = tempUser.Token;
-
                     DisplayAlert("Выполнено", "Авторизация прошла успешно", "OK");
-                    var page = new AppShell(UserInfo.Email);
+                    Cart.CartList.Clear();
+                    var page = new AppShell(tempUser);
                     (Application.Current.MainPage) = page;
                 }
                 catch

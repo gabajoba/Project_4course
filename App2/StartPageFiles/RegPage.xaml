@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:behavior="clr-namespace:App2" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              mc:Ignorable="d"
              x:Class="App2.StartPageFiles.RegPage"
              Title="Регистрация">
@@ -135,14 +134,12 @@
                     Text="Регистрация" 
                     TextColor="#E4E3E3" 
                     BackgroundColor="#FF6900" 
-                    FontAttributes="Bold" 
-                    
-                    Clicked="regAcceptButton_Clicked" 
-                                        
-                                    
-                    HorizontalOptions="Center" Margin="0,35,0,0" Padding="125,15,125,15" 
+                    FontAttributes="Bold"                 
+                    HorizontalOptions="Center" 
+                    Margin="0,35,0,0" 
+                    Padding="125,15,125,15" 
                         
-                    />
+                    Clicked="regAcceptButton_Clicked"/>
 
             </StackLayout>
         </ScrollView>

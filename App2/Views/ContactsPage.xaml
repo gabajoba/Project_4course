@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:maps="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
              mc:Ignorable="d"
              x:Class="App2.Views.ContactsPage">
     <ContentPage.Content>
@@ -99,6 +99,7 @@
                 </Image>
 
                 <Image  x:Name="instagram"
+                        
                                Grid.Row="1"
                                Grid.Column="1"
                            Source="https://cdn.icon-icons.com/icons2/726/PNG/512/instagram_f_icon-icons.com_62685.png" 

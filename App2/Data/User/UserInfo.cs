@@ -1,6 +1,6 @@
 ﻿namespace App2.Data.User
 {
-    class UserInfo 
+    abstract class UserInfo 
     {       
         public static string Email { get; set; }
       

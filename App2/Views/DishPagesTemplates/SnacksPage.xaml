@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
-             
              xmlns:controls="clr-namespace:App2.Controls"
              xmlns:data="clr-namespace:App2.Data"
              xmlns:views="clr-namespace:App2.Views"
-             
              mc:Ignorable="d"
              x:Class="App2.Views.SnacksPage">
 
@@ -15,10 +13,10 @@
 
     <Shell.SearchHandler>
         <controls:DishSearchHandler Placeholder="Поиск"
-                                      ShowsResults="true"
-                                      ItemTemplate="{StaticResource DishSearchTemplate}"
-                                      Dishes="{x:Static data:AllDishesData.AllDishes}"
-                                      SelectedItemNavigationTarget="{x:Type views:DishDetailPage}" />
+                                    ShowsResults="true"
+                                    ItemTemplate="{StaticResource DishSearchTemplate}"
+                                    Dishes="{x:Static data:AllDishesData.AllDishes}"
+                                    SelectedItemNavigationTarget="{x:Type views:DishDetailPage}" />
     </Shell.SearchHandler>
 
     <CollectionView Margin="20"
