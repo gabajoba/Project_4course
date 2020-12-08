@@ -15,15 +15,15 @@
     </ContentPage.BindingContext>
     
     <StackLayout>
-
+		<!--Корзина пуста-->
         <Label x:Name="CartEmpty"					                    
 					Text="Корзина пуста"
 					FontAttributes="Bold"                       
 					VerticalOptions="CenterAndExpand"
 					FontSize="Large"				
 					HorizontalOptions="CenterAndExpand"/>
+		<!--Корзина-->
         <StackLayout>
-            
             <ListView x:Name="_test1"         
 					  Margin="0" 
 					  SelectionMode="None"
@@ -34,6 +34,7 @@
                         <ViewCell>
                             <StackLayout>
                                 <Grid Padding="15">
+                                    <!--Grid Definitions-->
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="45" />
                                         <RowDefinition Height="65" />
@@ -44,7 +45,7 @@
                                         <ColumnDefinition Width="0.30*" />
                                         <ColumnDefinition Width="0.35*" />
                                     </Grid.ColumnDefinitions>
-
+                                    <!--Шаблон картинки предмета в корзине-->
                                     <Image 
 											Grid.Column="0" 
 											Grid.Row="0"
@@ -53,6 +54,7 @@
 											Aspect="AspectFill"
 											HeightRequest="140" 
 											WidthRequest="140" />
+                                    <!--Шаблон названия предмета-->
                                     <Label 
                                            Grid.Column="0"
 										   Grid.Row="2"
@@ -61,6 +63,7 @@
 										   LineBreakMode="WordWrap"
 										   HorizontalTextAlignment="Center"
 										   VerticalOptions="End"/>
+                                    <!--Кнопка удаления предмета из корзины-->
                                     <Button 
 										   x:Name="_removeButton"
 										   Grid.Row="0"
@@ -74,6 +77,7 @@
 										   BackgroundColor="#DC2907"    
 										   VerticalOptions="Start"
 										   HorizontalOptions="End"/>
+                                    <!--Шаблон цены-->
                                     <Label 
 										   x:Name="_priceLabel"
 										   Grid.Row="0"
@@ -100,6 +104,7 @@
 										   FontAttributes="Italic"                       
 										   VerticalOptions="End"
 										   HorizontalOptions="End"/>
+                                    <!--Шаблон количества-->
                                     <Label 
 										   Margin="1"
 										   Grid.Row="0"
@@ -108,6 +113,7 @@
 										   FontAttributes="Italic"                       
 										   VerticalOptions="End"                      
 										   HorizontalOptions="Start"/>
+                                    <!--Степпер-->
                                     <Stepper 
 											x:Name="Stepper1"                        
 											Grid.ColumnSpan="2"
@@ -129,7 +135,8 @@
 											FontAttributes="Italic"                       
 											VerticalOptions="Start"
 											FontSize="Medium"
-											HorizontalOptions="End"/>	
+											HorizontalOptions="End"/>
+                                    <!--Итоговая стоимость одного товара (цена*количество)-->
                                     <Label 
 										   x:Name="_totalPrice"
 										   Grid.Row="2"
@@ -146,11 +153,11 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-
-
+		<!--Оформить заказ + итоговая стоимость-->
         <Grid
 			x:Name="_orderGrid"
-			Padding="5">
+			Padding="5"
+            >
             <Grid.RowDefinitions>
                 <RowDefinition Height="55" />
             </Grid.RowDefinitions>
@@ -158,6 +165,7 @@
                 <ColumnDefinition Width="0.4*" />
                 <ColumnDefinition Width="0.6*"/>
             </Grid.ColumnDefinitions>
+            <!--Шаблон кнопки оформить заказ-->
             <Button x:Name="orderButton" 
 					Grid.Column="1"
 					Text="Оформить заказ" 
@@ -165,10 +173,11 @@
 					BackgroundColor="#DC2907" 
 					FontAttributes="Bold" 
 					Clicked="orderButton_Clicked" 
-					HorizontalOptions="FillAndExpand" 					 
+					HorizontalOptions="FillAndExpand"
+                    CornerRadius="22" 
 					MinimumWidthRequest="150"
 					VerticalOptions="FillAndExpand" />
-            
+            <!--Итоговая стоимость всех предметов в корзине-->
             <Label x:Name="_totalOrderPrice"
 					Grid.Column="0"                      
 					Text="{Binding local:Cart.CartList}"

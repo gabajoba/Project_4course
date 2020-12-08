@@ -71,9 +71,10 @@
                 <!-- Кнопка авторизации -->
                 <Button x:Name="authButton" 
                         Text="Войти" 
-                        TextColor="#E4E3E3" 
+                        TextColor="White" 
                         BackgroundColor="#FF6900" 
-                        FontAttributes="Bold"             
+                        FontAttributes="Bold"                    
+                        CornerRadius="30"
                         HorizontalOptions="Center" 
                         Margin="0,35,0,0" 
                         Padding="125,15,125,15" 

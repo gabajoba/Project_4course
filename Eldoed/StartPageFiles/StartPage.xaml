@@ -33,7 +33,10 @@
                     Margin="0,150,0,5"  
                     HorizontalOptions="Center" 
                     HeightRequest="100" 
-                    WidthRequest="300"/>
+                    WidthRequest="300"
+                    
+                    CornerRadius="22"
+                    />
             <!-- Регистрация -->
             <Button x:Name="regButton" 
                     Text="Регистрация" 
@@ -45,7 +48,8 @@
                     Margin="0,5"                   
                     HorizontalOptions="Center" 
                     HeightRequest="100"
-                    WidthRequest="300"/>
+                    WidthRequest="300"
+                    CornerRadius="22"/>
             <!-- Пропустить -->
             <Button x:Name="skipButton"
                     Text="Пропустить"

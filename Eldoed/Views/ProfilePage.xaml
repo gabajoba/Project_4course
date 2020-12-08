@@ -22,7 +22,8 @@
                     Margin="15,15,15,15" 
                     Text="Ваши заказы:"
                     FontSize="Medium"
-                    TextColor="OrangeRed">
+                    TextColor="OrangeRed"
+                    >
             </Label>
 
             <Button x:Name="authButton" 
@@ -33,6 +34,7 @@
                     FontAttributes="Bold" 
                     Clicked="AuthButton_Clicked"
                     Margin="0,150,0,5"  
+                    CornerRadius="22"
                     HorizontalOptions="Center" 
                     HeightRequest="100" 
                     WidthRequest="300"/>
@@ -43,7 +45,8 @@
                     BackgroundColor="#FF6900" 
                     FontAttributes="Bold" 
                     Clicked="RegButton_Clicked"                    
-                    Margin="0,5"                   
+                    Margin="0,5"    
+                    CornerRadius="22"
                     HorizontalOptions="Center" 
                     HeightRequest="100"
                     WidthRequest="300"/>

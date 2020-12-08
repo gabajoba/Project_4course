@@ -31,7 +31,7 @@
                     FontAttributes="Bold" 
                     
                     Clicked="orderButton_Clicked" 
-               
+                    CornerRadius="22"
                     HorizontalOptions="Center" 
                     HeightRequest="70" 
                     WidthRequest="250"
